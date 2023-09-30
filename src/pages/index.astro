@@ -16,6 +16,7 @@ import ProductOrange from "../assets/cafe_2500.png";
 import ProductPink from "../assets/Accesorios.png";
 
 import PerritoNegro from "../assets/Perro@4x.png";
+import DistribuidorTitle from "../assets/distribuidor_confianza.png";
 ---
 
 <Layout title="Bienvenido a Yellow Coffee.">
@@ -76,7 +77,7 @@ import PerritoNegro from "../assets/Perro@4x.png";
     </section>
     <section id="products" class="flex flex-col items-center md:my-10">
       <div>
-        <h2 class="font-principalBold font-semibold mb-4 md:text-3xl md:mb-8">
+        <h2 class="mb-4 md:text-3xl md:mb-8">
           Nuestros <span id="text-naranja" class="text-naranja">Productos</span
           >.
         </h2>
@@ -106,25 +107,17 @@ import PerritoNegro from "../assets/Perro@4x.png";
     </section>
     <section id="contact" class="pt-8 md:pt-12 w-full md:flex md:flex-row">
       <div class="flex flex-col pl-8 md:pl-14 w-9/12 md:px-12 md:w-7/12 pb-20">
-        <h2
-          class="font-principalBold font-bold text-2xl mb-6 md:text-6xl md:font-semibold md:mb-10"
-        >
+        <h2 class="text-2xl mb-6 md:text-6xl md:font-semibold md:mb-10">
           Contáctanos.
         </h2>
-        <h3
-          class="font-principalBold font-semibold mb-6 text-xl md:text-xl md:mb-10"
-        >
-          Ventas por Whatsapp
-        </h3>
-        <p class="font-principal mb-6">
+        <h3 class="mb-6 text-xl md:text-2xl md:mb-10">Ventas por Whatsapp</h3>
+        <p class="font-principal mb-6 md:text-xl">
           <span class="text-green-600">Whatsapp</span> es un medio muy
           conveniente para hacer pedidos de forma rápida y sencilla. Tú puedes
           escribirnos o llamarnos al número +(57) 3196117933.
         </p>
-        <h3 class="font-principalBold mb-6">
-          Quieres convertirte en distribuidor o proponer una alianza.
-        </h3>
-        <p class="font-principal mb-6 relative z-10">
+        <Image src={DistribuidorTitle} alt={"Titulo "} class="-ml-[7%]" />
+        <p class="font-principal mb-6 relative z-10 md:text-xl">
           Para un contacto corporativo, por favor envíanos un correo a
           <span class="text-naranja">yellowcoffeecol@gmail.com.</span>
         </p>
