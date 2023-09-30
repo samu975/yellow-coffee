@@ -1,0 +1,125 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+// Imagenes
+import CoffeeImageMain from "../assets/Foto_de_las_frutas.png";
+import CreadoConAmorTitle from "../assets/Creado_con_Amor.png";
+import YellowCoffeeTitle from "../assets/Sello_Logo_completo.svg";
+import PersonasTomandoCafe from "../assets/Personas_tomando_café.png";
+
+import ProductYellow from "../assets/Cafe_340.png";
+import ProductBlue from "../assets/Yellow_Drip.png";
+import ProductGray from "../assets/Mush_Coffee_drip.png";
+import ProductRed from "../assets/Mush_Coffe.png";
+import ProductOrange from "../assets/cafe_2500.png";
+import ProductPink from "../assets/Accesorios.png";
+
+import PerritoNegro from "../assets/Perro@4x.png";
+---
+
+<Layout title="Bienvenido a Yellow Coffee.">
+  <main>
+    <h1 hidden>Bienvenido a Yellow Coffee.</h1>
+    <Image
+      class="max-w-[full]"
+      src={CoffeeImageMain}
+      alt="Imagen de manos cargando frutas"
+    />
+
+    <section id="home" class="w-full flex flex-col items-center mb-8">
+      <div class="w-full flex justify-center items-center">
+        <Image
+          class="max-w-full px-4 mt-8"
+          src={CreadoConAmorTitle}
+          alt="Titulo principal: Creado con amor"
+        />
+      </div>
+      <div class="md:mx-10 px-5 flex">
+        <p class="text-center text-2xl font-principal md:text-6xl md:px-6">
+          El valor del individuo está no solo en sí mismo, sino en la comunidad
+          y viceversa, es la lógica del ‘soy porque somos’.
+        </p>
+      </div>
+    </section>
+    <section class="w-full flex flex-col mt-2 mb-4">
+      <div
+        class="my-8 mx-auto divider border-t-4 w-4/5 border-gray-300 border-solid"
+      >
+      </div>
+      <div class="flex flex-col items-center mb-8">
+        <Image
+          alt={"Titulo secundario: Yellow Coffe"}
+          src={YellowCoffeeTitle}
+          class="w-1/2"
+        />
+        <p class="px-10 text-center text-md md:text-5xl md:px-20">
+          Una marca enfocada en expandir lo creado con amor a partir de los
+          vínculos que tenemos desde espacios colectivos y sociales.
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <Image
+          class="w-full"
+          alt={"Imagen de dos personas tomando café"}
+          src={PersonasTomandoCafe}
+        />
+      </div>
+    </section>
+    <section id="products" class="flex flex-col items-center">
+      <div>
+        <h2 class="font-principalBold font-semibold mb-4 md:text-6xl md:mb-8">
+          Nuestros <span id="text-naranja" class="text-naranja">Productos</span
+          >.
+        </h2>
+      </div>
+      <div>
+        <Image src={ProductYellow} alt={"Producto café 340"} />
+      </div>
+      <div>
+        <Image src={ProductBlue} alt={"Producto café coffee drip"} />
+      </div>
+      <div>
+        <Image src={ProductGray} alt={"Producto café mush coffee"} />
+      </div>
+      <div>
+        <Image src={ProductRed} alt={"Producto café mush coffee"} />
+      </div>
+      <div>
+        <Image src={ProductOrange} alt={"Producto café 2500"} />
+      </div>
+      <div>
+        <Image src={ProductPink} alt={"Producto café Accesorios"} />
+      </div>
+    </section>
+    <section id="contact" class="pt-8 md:pt-12 w-full">
+      <div class="flex flex-col pl-8 md:pl-14 w-9/12">
+        <h2
+          class="font-principalBold font-bold text-2xl mb-6 md:text-6xl md:mb-10"
+        >
+          Contáctanos.
+        </h2>
+        <h3
+          class="font-principalBold font-semibold mb-6 text-xl md:text-5xl md:mb-10"
+        >
+          Ventas por Whatsapp
+        </h3>
+        <p class="font-principal mb-6">
+          <span class="text-green-600">Whatsapp</span> es un medio muy
+          conveniente para hacer pedidos de forma rápida y sencilla. Tú puedes
+          escribirnos o llamarnos al número +(57) 3196117933.
+        </p>
+        <h3 class="font-principalBold mb-6">
+          Quieres convertirte en distribuidor o proponer una alianza.
+        </h3>
+        <p class="font-principal mb-6 relative z-10">
+          Para un contacto corporativo, por favor envíanos un correo a
+          <span class="text-naranja">yellowcoffeecol@gmail.com.</span>
+        </p>
+      </div>
+      <div class="-mt-5">
+        <Image src={PerritoNegro} alt={"Perrito negro"} class="-mt-24" />
+      </div>
+    </section>
+  </main>
+</Layout>
