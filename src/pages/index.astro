@@ -20,45 +20,53 @@ import PerritoNegro from "../assets/Perro@4x.png";
 
 <Layout title="Bienvenido a Yellow Coffee.">
   <main>
-    <h1 hidden>Bienvenido a Yellow Coffee.</h1>
-    <Image
-      class="max-w-[full]"
-      src={CoffeeImageMain}
-      alt="Imagen de manos cargando frutas"
-    />
-
-    <section id="home" class="w-full flex flex-col items-center mb-8">
-      <div class="w-full flex justify-center items-center">
+    <section
+      id="home"
+      class="w-full flex flex-col items-center mb-8 md:flex-row md:py8"
+    >
+      <div class="md:ml-10 md:mt-10">
+        <h1 hidden>Bienvenido a Yellow Coffee.</h1>
         <Image
-          class="max-w-full px-4 mt-8"
-          src={CreadoConAmorTitle}
-          alt="Titulo principal: Creado con amor"
+          class="max-w-[full]"
+          src={CoffeeImageMain}
+          alt="Imagen de manos cargando frutas"
         />
       </div>
-      <div class="md:mx-10 px-5 flex">
-        <p class="text-center text-2xl font-principal md:text-6xl md:px-6">
-          El valor del individuo está no solo en sí mismo, sino en la comunidad
-          y viceversa, es la lógica del ‘soy porque somos’.
-        </p>
+      <div>
+        <div class="w-full flex justify-center items-center">
+          <Image
+            class="max-w-full px-4 mt-8 md:w-1/2"
+            src={CreadoConAmorTitle}
+            alt="Titulo principal: Creado con amor"
+          />
+        </div>
+        <div class="md:ml-10 px-5 flex">
+          <p class="text-center text-2xl font-principal md:text-3xl md:px-2">
+            El valor del individuo está no solo en sí mismo, sino en la
+            comunidad y viceversa, es la lógica del ‘soy porque somos’.
+          </p>
+        </div>
       </div>
     </section>
-    <section class="w-full flex flex-col mt-2 mb-4">
-      <div
-        class="my-8 mx-auto divider border-t-4 w-4/5 border-gray-300 border-solid"
-      >
-      </div>
-      <div class="flex flex-col items-center mb-8">
+    <div
+      class="my-8 mx-auto divider border-t-4 w-4/5 border-gray-300 border-solid md:mt-14 md:w-11/12"
+    >
+    </div>
+    <section
+      class="w-full flex flex-col mt-2 mb-4 md:flex-row md:justify-evenly"
+    >
+      <div class="flex flex-col items-center justify-center mb-8 w-1/2">
         <Image
           alt={"Titulo secundario: Yellow Coffe"}
           src={YellowCoffeeTitle}
           class="w-1/2"
         />
-        <p class="px-10 text-center text-md md:text-5xl md:px-20">
+        <p class="px-10 text-center font-light text-md md:text-xl md:px-6">
           Una marca enfocada en expandir lo creado con amor a partir de los
           vínculos que tenemos desde espacios colectivos y sociales.
         </p>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center w-1/2">
         <Image
           class="w-full"
           alt={"Imagen de dos personas tomando café"}
@@ -66,41 +74,45 @@ import PerritoNegro from "../assets/Perro@4x.png";
         />
       </div>
     </section>
-    <section id="products" class="flex flex-col items-center">
+    <section id="products" class="flex flex-col items-center md:my-10">
       <div>
-        <h2 class="font-principalBold font-semibold mb-4 md:text-6xl md:mb-8">
+        <h2 class="font-principalBold font-semibold mb-4 md:text-3xl md:mb-8">
           Nuestros <span id="text-naranja" class="text-naranja">Productos</span
           >.
         </h2>
       </div>
-      <div>
-        <Image src={ProductYellow} alt={"Producto café 340"} />
+      <div class="md:flex md:flex-row">
+        <div>
+          <Image src={ProductYellow} alt={"Producto café 340"} />
+        </div>
+        <div>
+          <Image src={ProductBlue} alt={"Producto café coffee drip"} />
+        </div>
+        <div>
+          <Image src={ProductGray} alt={"Producto café mush coffee"} />
+        </div>
       </div>
-      <div>
-        <Image src={ProductBlue} alt={"Producto café coffee drip"} />
-      </div>
-      <div>
-        <Image src={ProductGray} alt={"Producto café mush coffee"} />
-      </div>
-      <div>
-        <Image src={ProductRed} alt={"Producto café mush coffee"} />
-      </div>
-      <div>
-        <Image src={ProductOrange} alt={"Producto café 2500"} />
-      </div>
-      <div>
-        <Image src={ProductPink} alt={"Producto café Accesorios"} />
+      <div class="md:flex md:flex-row">
+        <div class="w-1/3">
+          <Image src={ProductRed} alt={"Producto café mush coffee"} />
+        </div>
+        <div class="w-1/3">
+          <Image src={ProductOrange} alt={"Producto café 2500"} />
+        </div>
+        <div class="w-1/3">
+          <Image src={ProductPink} alt={"Producto café Accesorios"} />
+        </div>
       </div>
     </section>
-    <section id="contact" class="pt-8 md:pt-12 w-full">
-      <div class="flex flex-col pl-8 md:pl-14 w-9/12">
+    <section id="contact" class="pt-8 md:pt-12 w-full md:flex md:flex-row">
+      <div class="flex flex-col pl-8 md:pl-14 w-9/12 md:px-12 md:w-7/12 pb-20">
         <h2
-          class="font-principalBold font-bold text-2xl mb-6 md:text-6xl md:mb-10"
+          class="font-principalBold font-bold text-2xl mb-6 md:text-6xl md:font-semibold md:mb-10"
         >
           Contáctanos.
         </h2>
         <h3
-          class="font-principalBold font-semibold mb-6 text-xl md:text-5xl md:mb-10"
+          class="font-principalBold font-semibold mb-6 text-xl md:text-xl md:mb-10"
         >
           Ventas por Whatsapp
         </h3>
@@ -117,7 +129,7 @@ import PerritoNegro from "../assets/Perro@4x.png";
           <span class="text-naranja">yellowcoffeecol@gmail.com.</span>
         </p>
       </div>
-      <div class="-mt-5">
+      <div class="-mt-5 md:mt-0 self-end">
         <Image src={PerritoNegro} alt={"Perrito negro"} class="-mt-24" />
       </div>
     </section>
