@@ -17,13 +17,21 @@ import ProductPink from "../assets/Accesorios.png";
 
 import PerritoNegro from "../assets/Perro@4x.png";
 import DistribuidorTitle from "../assets/distribuidor_confianza.png";
+
+// React
+import NavBarContainer from "../components/react/NavBarContainer.tsx";
+
+const linksNavegacion = ["inicio", "productos", "contacto"];
 ---
 
 <Layout title="Bienvenido a Yellow Coffee.">
+  <header>
+    <NavBarContainer navBarElements={linksNavegacion} client:load />
+  </header>
   <main>
     <section
-      id="home"
-      class="w-full flex flex-col items-center mb-8 md:flex-row md:py8"
+      id="inicio"
+      class="w-full flex flex-col mt-12 md:mt-0 items-center mb-8 md:flex-row md:py8"
     >
       <div class="md:ml-10 md:mt-10">
         <h1 hidden>Bienvenido a Yellow Coffee.</h1>
@@ -75,7 +83,7 @@ import DistribuidorTitle from "../assets/distribuidor_confianza.png";
         />
       </div>
     </section>
-    <section id="products" class="flex flex-col items-center md:my-10">
+    <section id="productos" class="flex flex-col items-center md:my-10">
       <div>
         <h2 class="mb-4 font-bold md:text-3xl md:mb-8">
           Nuestros <span id="text-naranja" class="text-naranja">Productos</span
@@ -105,7 +113,7 @@ import DistribuidorTitle from "../assets/distribuidor_confianza.png";
         </div>
       </div>
     </section>
-    <section id="contact" class="pt-8 md:pt-12 w-full md:flex md:flex-row">
+    <section id="contacto" class="pt-8 md:pt-12 w-full md:flex md:flex-row">
       <div class="flex flex-col pl-12 md:pl-28 w-9/12 md:w-7/12 pb-20">
         <h2 class="text-3xl mb-6 md:text-7xl font-bold md:mb-10">
           Contáctanos.
@@ -120,7 +128,7 @@ import DistribuidorTitle from "../assets/distribuidor_confianza.png";
           <span>+(57) 3196117933.</span>
         </p>
         <Image src={DistribuidorTitle} alt={"Titulo "} class="-ml-[7%]" />
-        <p class="font-principal text-xl mb-6 relative z-10 md:text-3xl">
+        <p class="font-principal text-xl mb-6 md:text-3xl">
           Para un contacto corporativo, por favor envíanos un correo a
           <span class="text-naranja">yellowcoffeecol@gmail.com.</span>
         </p>
