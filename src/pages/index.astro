@@ -1,22 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 
 // Imagenes
-import CoffeeImageMain from "../assets/Foto_de_las_frutas.png";
-import CreadoConAmorTitle from "../assets/Creado_con_Amor.png";
-import YellowCoffeeTitle from "../assets/Sello_Logo_completo.svg";
-import PersonasTomandoCafe from "../assets/PersonasTomandoCafe.png";
+import CoffeeImageMain from '../assets/Foto_de_las_frutas.png';
+import CreadoConAmorTitle from '../assets/Creado_con_Amor.png';
+import YellowCoffeeTitle from '../assets/Sello_Logo_completo.svg';
+import PersonasTomandoCafe from '../assets/PersonasTomandoCafe.png';
 
-import ProductYellow from "../assets/Cafe_340.png";
-import ProductBlue from "../assets/Yellow_Drip.png";
-import ProductGray from "../assets/Mush_Coffee_drip.png";
-import ProductRed from "../assets/Mush_Coffe.png";
-import ProductOrange from "../assets/cafe_2500.png";
-import ProductPink from "../assets/Accesorios.png";
+import ProductYellow from '../assets/Cafe_340.png';
+import ProductBlue from '../assets/Yellow_Drip.png';
+import ProductGray from '../assets/Mush_Coffee_drip.png';
+import ProductRed from '../assets/Mush_Coffe.png';
+import ProductOrange from '../assets/cafe_2500.png';
+import ProductPink from '../assets/Accesorios.png';
 
-import PerritoNegro from "../assets/Perro@4x.png";
-import DistribuidorTitle from "../assets/distribuidor_confianza.png";
+import PerritoNegro from '../assets/Perro@4x.png';
+import DistribuidorTitle from '../assets/Quieres-versión-grande.png';
 ---
 
 <Layout title="Bienvenido a Yellow Coffee.">
@@ -58,7 +58,7 @@ import DistribuidorTitle from "../assets/distribuidor_confianza.png";
     >
       <div class="flex flex-col items-center justify-center mb-8 md:w-1/2">
         <Image
-          alt={"Titulo secundario: Yellow Coffe"}
+          alt={'Titulo secundario: Yellow Coffe'}
           src={YellowCoffeeTitle}
           class="w-1/2"
         />
@@ -70,7 +70,7 @@ import DistribuidorTitle from "../assets/distribuidor_confianza.png";
       <div class="flex flex-col items-center md:w-1/2">
         <Image
           class="w-full"
-          alt={"Imagen de dos personas tomando café"}
+          alt={'Imagen de dos personas tomando café'}
           src={PersonasTomandoCafe}
         />
       </div>
@@ -84,24 +84,24 @@ import DistribuidorTitle from "../assets/distribuidor_confianza.png";
       </div>
       <div class="md:flex md:flex-row">
         <div class="md:w-1/3">
-          <Image src={ProductYellow} alt={"Producto café 340"} />
+          <Image src={ProductYellow} alt={'Producto café 340'} />
         </div>
         <div class="md:w-1/3">
-          <Image src={ProductBlue} alt={"Producto café coffee drip"} />
+          <Image src={ProductBlue} alt={'Producto café coffee drip'} />
         </div>
         <div class="md:w-1/3">
-          <Image src={ProductGray} alt={"Producto café mush coffee"} />
+          <Image src={ProductGray} alt={'Producto café mush coffee'} />
         </div>
       </div>
       <div class="md:flex md:flex-row">
         <div class="md:w-1/3">
-          <Image src={ProductRed} alt={"Producto café mush coffee"} />
+          <Image src={ProductRed} alt={'Producto café mush coffee'} />
         </div>
         <div class="md:w-1/3">
-          <Image src={ProductOrange} alt={"Producto café 2500"} />
+          <Image src={ProductOrange} alt={'Producto café 2500'} />
         </div>
         <div class="md:w-1/3">
-          <Image src={ProductPink} alt={"Producto café Accesorios"} />
+          <Image src={ProductPink} alt={'Producto café Accesorios'} />
         </div>
       </div>
     </section>
@@ -110,23 +110,27 @@ import DistribuidorTitle from "../assets/distribuidor_confianza.png";
         <h2 class="text-3xl mb-6 md:text-7xl font-bold md:mb-10">
           Contáctanos.
         </h2>
-        <h3 class="mb-6 text-2xl font-bold md:text-3xl md:mb-10">
+        <h3 class="mb-4 text-2xl font-bold md:text-4xl md:mb-10">
           Ventas por Whatsapp
         </h3>
-        <p class="text-xl mb-6 md:text-3xl">
+        <p class="text-xl mb-8 md:text-3xl">
           <span class="text-green-600">Whatsapp</span> es un medio muy
           conveniente para hacer pedidos de forma rápida y sencilla. Tú puedes
           escribirnos o llamarnos al número <br />
           <span>+(57) 3196117933.</span>
         </p>
-        <Image src={DistribuidorTitle} alt={"Titulo "} class="-ml-[7%]" />
+        <Image
+          src={DistribuidorTitle}
+          alt={'Titulo '}
+          class="mb-4 w-fit md:w-10/12"
+        />
         <p class="font-principal text-xl mb-6 relative z-10 md:text-3xl">
           Para un contacto corporativo, por favor envíanos un correo a
           <span class="text-naranja">yellowcoffeecol@gmail.com.</span>
         </p>
       </div>
       <div class="-mt-5 md:mt-0 self-end">
-        <Image src={PerritoNegro} alt={"Perrito negro"} class="-mt-24" />
+        <Image src={PerritoNegro} alt={'Perrito negro'} class="-mt-24" />
       </div>
     </section>
   </main>
