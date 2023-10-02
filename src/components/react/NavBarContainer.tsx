@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Logo from "../../assets/Sello_Logo.svg";
-import SearchIcon from "../../assets/search.svg";
-import CartIcon from "../../assets/shop-bag-icon.svg";
-import BurguerMenu from "../../assets/burguer_menu.svg";
-import SlideMenu from "./SideMenu";
+import React, { useState } from 'react';
+import Logo from '../../assets/Sello_Logo.svg';
+import SearchIcon from '../../assets/search.svg';
+import CartIcon from '../../assets/shop-bag-icon.svg';
+import BurguerMenu from '../../assets/burguer_menu.svg';
+import SlideMenu from './SideMenu';
 
 //Imagenes
 
@@ -15,10 +15,10 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="flex pr-6 justify-between items-center shadow-lg fixed top-0 w-full bg-white">
+    <div className="flex pr-6 justify-between items-center shadow-lg fixed top-0 w-full bg-white/60">
       <div className="w-1/3">
         <img
-          alt={"Imagen del logo de yellow coffe"}
+          alt={'Imagen del logo de yellow coffe'}
           src={Logo.src}
           className="w-20"
         />
@@ -35,7 +35,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
             className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
             aria-label="toggle menu"
             onClick={() => {
-              console.log("click");
+              console.log('click');
               setMenuOpen(!menuOpen);
             }}
           >
@@ -70,7 +70,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
         <div className="hidden md:flex md:justify-around md:w-full">
           <ul className="flex w-full justify-around">
             {navBarElements.map((element) => (
-              <li className="no-underline" key={element + "1"}>
+              <li className="no-underline" key={element + '1'}>
                 <a className="font-bold" href={`#${element}`}>
                   {element}
                 </a>
