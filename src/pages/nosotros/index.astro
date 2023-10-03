@@ -1,0 +1,40 @@
+---
+//Astro
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+//Imagenes
+import YellowCoffeeTitle from '../../assets/Sello_Logo_completo.svg';
+import PersonasTomandoCafe from '../../assets/PersonasTomandoCafe.png';
+---
+
+<Layout title="Sobre Yellow Coffee">
+  <main>
+    <div
+      class="my-8 mx-auto divider border-t-4 w-4/5 border-gray-300 border-solid md:mt-14 md:w-11/12"
+    >
+    </div>
+    <section
+      class="w-full flex flex-col mt-2 mb-4 md:flex-row md:justify-evenly"
+    >
+      <div class="flex flex-col items-center justify-center mb-8 md:w-1/2">
+        <Image
+          alt={'Titulo secundario: Yellow Coffe'}
+          src={YellowCoffeeTitle}
+          class="w-1/2"
+        />
+        <p class="px-10 text-center font-light text-2xl md:text-3xl md:px-6">
+          Una marca enfocada en expandir lo creado con amor a partir de los
+          vínculos que tenemos desde espacios colectivos y sociales.
+        </p>
+      </div>
+      <div class="flex flex-col items-center md:w-1/2">
+        <Image
+          class="w-full"
+          alt={'Imagen de dos personas tomando café'}
+          src={PersonasTomandoCafe}
+        />
+      </div>
+    </section>
+  </main>
+</Layout>

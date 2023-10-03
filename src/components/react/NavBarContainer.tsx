@@ -15,7 +15,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="flex pr-6 justify-between items-center shadow-lg fixed top-0 w-full bg-white/60">
+    <div className="flex pr-6 justify-between items-center shadow-lg fixed top-0 w-full bg-white/60 z-50">
       <div className="w-1/3">
         <img
           alt={'Imagen del logo de yellow coffe'}

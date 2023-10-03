@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import PerritoNegro from '../../assets/Perro@4x.png';
+import DistribuidorTitle from '../../assets/distribuidorConfianzaTitle.png';
+import Layout from '../../layouts/Layout.astro';
+import WhatsappIcon from '../../assets/components/footer/instagram.svg';
+---
+
+<Layout title="Sobre Yellow Coffee">
+  <section id="contacto" class="mt-24 pt-8 md:pt-12 w-full md:flex md:flex-row">
+    <div class="flex flex-col pl-12 md:pl-28 w-9/12 md:w-7/12 pb-20">
+      <h2 class="text-3xl mb-6 md:text-7xl font-bold md:mb-10">Contáctanos.</h2>
+      <h3 class="mb-4 text-2xl font-bold md:text-4xl md:mb-10">
+        Ventas por Whatsapp
+      </h3>
+      <p class="text-xl mb-4 md:text-3xl">
+        <span class="text-green-600">Whatsapp</span> es un medio muy conveniente
+        para hacer pedidos de forma rápida y sencilla. Tú puedes escribirnos o
+        llamarnos al número <br />
+        <span>+(57) 3196117933.</span>
+      </p>
+      <a
+        href=""
+        class="bg-green-400 flex justify-center items-center py-2 pl-3 pr-1 text-white rounded-xl button-wpp mb-4"
+      >
+        Envianos un mensaje <span
+          ><Image
+            src={WhatsappIcon}
+            alt={'Logo de whatsapp'}
+            class={'ml-2'}
+          /></span
+        >
+      </a>
+      <Image
+        src={DistribuidorTitle}
+        alt={'Titulo '}
+        class="mb-4 w-fit md:w-10/12"
+      />
+      <p class="font-principal text-xl mb-6 relative z-10 md:text-3xl">
+        Para un contacto corporativo, por favor envíanos un correo a
+        <span class="text-naranja">yellowcoffeecol@gmail.com.</span>
+      </p>
+    </div>
+    <div class="-mt-5 md:mt-0 self-end">
+      <Image src={PerritoNegro} alt={'Perrito negro'} class="-mt-24" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .button-wpp {
+    width: 110%;
+  }
+</style>
