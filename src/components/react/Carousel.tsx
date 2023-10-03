@@ -8,7 +8,7 @@ interface CarouselProps {
   images: string[];
 }
 
-const Carousel = ({ images }: CarouselProps) => {
+const Carousel = ({ images = [] }: CarouselProps) => {
   const settings = {
     centerMode: true,
     centerPadding: '25px',

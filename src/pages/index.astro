@@ -25,6 +25,7 @@ import Carousel from '../components/react/Carousel.tsx';
 
 //Astro
 import Footer from '../components/Footer.astro';
+import TestComponent from '../components/react/TestComponent';
 
 const imagenesCarousel = [
   ProductYellow.src,
@@ -67,7 +68,8 @@ const imagenesCarousel = [
   </section>
 </Layout>
 <div class="md:hidden relative z-0">
-  <Carousel images={imagenesCarousel} client:load />
+  <!-- <TestComponent client:load /> -->
+  <Carousel images={imagenesCarousel} client:only />
 </div>
 <section
   id="productos"
