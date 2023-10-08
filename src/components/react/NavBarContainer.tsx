@@ -17,11 +17,13 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
   return (
     <div className="flex pr-6 justify-between items-center shadow-lg fixed top-0 w-full bg-white/60 z-50">
       <div className="w-1/3">
-        <img
-          alt={'Imagen del logo de yellow coffe'}
-          src={Logo.src}
-          className="w-20"
-        />
+        <a href="/">
+          <img
+            alt={'Imagen del logo de yellow coffe'}
+            src={Logo.src}
+            className="w-20"
+          />
+        </a>
       </div>
       <div className="flex w-2/3 justify-end md:justify-center">
         <div className="flex gap-6 items-center md:hidden">
