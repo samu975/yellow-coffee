@@ -3,6 +3,7 @@ interface SlideMenuProps {
   onClose: () => void;
   isOpen: boolean;
 }
+import { motion } from 'framer-motion';
 
 import AcercaDeNosotrosTitle from '../../assets/components/navbar/mush-coffee.svg';
 import MushCoffee from '../../assets/components/navbar/acerca-de-nosotros.svg';
@@ -10,9 +11,13 @@ import PersonasTomandoCafe from '../../assets/PersonasTomandoCafe.png';
 
 const SlideMenu = ({ navBarElements, onClose, isOpen }: SlideMenuProps) => {
   return (
-    <div
+    <motion.div
+      initial={{ y: '-100%' }}
+      animate={{ y: '0%' }}
+      exit={{ y: '-100%' }}
+      transition={{ duration: 0.5, ease: 'linear' }}
       className={`fixed top-0 right-0 w-full pt-10 h-screen z-50 bg-white p-5
-        flex flex-col space-y-5 text-black transition-transform duration-3000 ${
+        flex flex-col space-y-5 text-black ${
           isOpen ? 'transform translate-x-0' : 'transform translate-x-full'
         }`}
     >
@@ -79,7 +84,7 @@ const SlideMenu = ({ navBarElements, onClose, isOpen }: SlideMenuProps) => {
           alt="Imagen de personas tomando café"
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
