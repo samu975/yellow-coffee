@@ -15,6 +15,10 @@ import Yellow2500 from '../../assets/components/navbar/categorias/yellow/yellow2
 import Mush40 from '../../assets/components/navbar/categorias/mush/mush-mini.png';
 import Mush125 from '../../assets/components/navbar/categorias/mush/mush-medium.png';
 import Mush340 from '../../assets/components/navbar/categorias/mush/mush-big.png';
+import ToteBags from '../../assets/components/navbar/categorias/accesorios/tote-bag.svg';
+import Posters from '../../assets/components/navbar/categorias/accesorios/posters.svg';
+import Mugs from '../../assets/components/navbar/categorias/accesorios/mugs.svg';
+import Kits from '../../assets/components/navbar/categorias/accesorios/kits.svg';
 
 interface NavBarContainerProps {
   navBarElements: Array<string>;
@@ -164,7 +168,13 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
             />
             <p>Mush Coffee</p>
           </div>
-          <div className="flex flex-col justify-end gap-1 items-center">
+          <div
+            className="flex flex-col justify-end gap-1 items-center"
+            onClick={(e) => {
+              e.preventDefault();
+              handleMenuClick('accesoriesMenu');
+            }}
+          >
             <img
               src={Accesories.src}
               alt="Tipo de café Yellow 2500"
@@ -274,29 +284,57 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
           className="w-full pb-4 pt-4 flex justify-around text-xs -mb-[68px] fixed z-50 opacity-90 menu-content"
           style={{ backgroundColor: '#E9E5E1' }}
         >
-          <div className="flex flex-col justify-end gap-1 items-center">
+          <div
+            className="flex flex-col justify-end gap-1 items-center"
+            onClick={() => {
+              navigateTo('/accesories/tote-bags');
+            }}
+          >
             <img
-              src={CoffeDrip.src}
+              src={ToteBags.src}
               alt="Tipo de cafe Coffe Drip"
-              className="w-8/12"
+              className="w-7/12"
             />
-            <p>Coffee Drip</p>
+            <p>Tote-Bags</p>
           </div>
-          <div className="flex flex-col justify-end gap-1 items-center">
+          <div
+            className="flex flex-col justify-end gap-1 items-center"
+            onClick={() => {
+              navigateTo('/accesories/posters');
+            }}
+          >
             <img
-              src={Yellow340.src}
+              src={Posters.src}
               alt="Tipo de café yellow 340 gr"
-              className="w-8/12"
+              className="w-7/12"
             />
-            <p>Yellow 340gr</p>
+            <p>Posters</p>
           </div>
-          <div className="flex flex-col justify-end gap-1 items-center">
+          <div
+            className="flex flex-col justify-end gap-1 items-center"
+            onClick={() => {
+              navigateTo('/accesories/mugs');
+            }}
+          >
             <img
-              src={Yellow2500.src}
+              src={Mugs.src}
               alt="Tipo de café Yellow 2500"
-              className="w-8/12"
+              className="w-12/12"
             />
-            <p>Yellow 2500gr</p>
+            <p>Mugs</p>
+          </div>
+          <div
+            className="flex flex-col justify-end gap-1 items-center"
+            onClick={() => {
+              navigateTo('/accesories/kits');
+            }}
+          >
+            <img
+              src={Kits.src}
+              alt="Tipo de café Yellow 2500"
+              className="w-11/12"
+            />
+            <p>Kits</p>
           </div>
         </div>
       ) : null}
