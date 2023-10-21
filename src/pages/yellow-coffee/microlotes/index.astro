@@ -1,0 +1,22 @@
+---
+import Product from '../../../components/Product.astro';
+import Microlotes from '../../../assets/yellow-coffee/340.png';
+import Variedades from '../../../assets/yellow-coffee/variedades.png';
+import Altura from '../../../assets/yellow-coffee/altura.png';
+import Acentos from '../../../assets/yellow-coffee/acentos.png';
+import Estilo from '../../../assets/yellow-coffee/estilo.png';
+---
+
+<Product
+  imagenProducto={Microlotes}
+  nombreProducto={'Microlotes'}
+  descripcionesProducto={[
+    {
+      titulo: 'Disponibilidad y caracteristicas',
+      descripcion: 'Contáctanos para más información',
+    },
+  ]}
+  caracteristicas={[Variedades, Altura, Acentos]}
+  estilo={Estilo}
+  tipoProducto="yellow"
+/>

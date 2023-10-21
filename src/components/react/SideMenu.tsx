@@ -54,7 +54,7 @@ const SlideMenu = ({ navBarElements, onClose, isOpen }: SlideMenuProps) => {
             </a>
           </li>
           <li className="my-6 text-left">
-            <a href="/mush-coffee" className="font-bold text-2xl">
+            <a href="/accesorios" className="font-bold text-2xl">
               Accesorios
             </a>
           </li>

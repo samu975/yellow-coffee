@@ -1,0 +1,23 @@
+---
+import Product from '../../../components/Product.astro';
+import Cafe340 from '../../../assets/yellow-coffee/340.png';
+import Variedades from '../../../assets/yellow-coffee/variedades.png';
+import Altura from '../../../assets/yellow-coffee/altura.png';
+import Acentos from '../../../assets/yellow-coffee/acentos.png';
+import Estilo from '../../../assets/yellow-coffee/estilo.png';
+---
+
+<Product
+  imagenProducto={Cafe340}
+  nombreProducto={'Café 340'}
+  descripcionesProducto={[
+    {
+      titulo: '340 gr',
+      descripcion: '+85 puntos',
+      precio: '$20.000',
+    },
+  ]}
+  caracteristicas={[Variedades, Altura, Acentos]}
+  estilo={Estilo}
+  tipoProducto="yellow"
+/>

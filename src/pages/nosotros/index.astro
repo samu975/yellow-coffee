@@ -8,15 +8,15 @@ import Footer from '../../components/Footer.astro';
 import ImagenPrincipal from '../../assets/nosotros/principal-image.png';
 import HombreConCafe from '../../assets/nosotros/hombre-con-cafe.png';
 import MujerConCafe from '../../assets/nosotros/mujer-con-cafe.png';
-import ManosConCafe from '../../assets/nosotros/manos-con-cafe.png';
 import NuestrosValores from '../../assets/nosotros/nuestos-valores.svg';
 import Nosotros from '../../assets/nosotros/nosotros.svg';
 import Card1Parrafo from '../../assets/nosotros/card-1-parrafo.svg';
 import Card2Parrafo from '../../assets/nosotros/card-2-parrafo.svg';
+import ConCadaTasaDeCafe from '../../components/ConCadaTasaDeCafe.astro';
 ---
 
 <Layout title="Acerca de Yellow Coffee">
-  <main class="p-0 m-0 box-border mb-8">
+  <main class="p-0 m-0 box-border mb-8 mt-14">
     <section
       id="inicio"
       class="w-full flex flex-col md:mt-0 items-center mb-8 md:flex-row md:py-8"
@@ -79,22 +79,7 @@ import Card2Parrafo from '../../assets/nosotros/card-2-parrafo.svg';
           />
         </div>
       </div>
-      <div id="nosotros-card-3" class="mx-4 px-8 pt-10 pb-0 rounded-xl mb-6">
-        <h3 class="uppercase mb-6 text-white font-bold text-2xl">
-          Con cada taza
-        </h3>
-        <p class="text-white text-lg">
-          de café Yellow Coffee, estas contribuyendo a un proceso ambiental y
-          social
-          <div>
-            <Image
-              class="-mt-40"
-              src={ManosConCafe}
-              alt={'Imagen de unas manos con una taza de café'}
-            />
-          </div>
-        </p>
-      </div>
+      <ConCadaTasaDeCafe bgColor="#f26a21" textColor="#ffffff" />
     </section>
     <section
       id="nuestros-valores"
@@ -168,9 +153,6 @@ import Card2Parrafo from '../../assets/nosotros/card-2-parrafo.svg';
   }
   #nosotros-card-2 {
     background-color: #004275;
-  }
-  #nosotros-card-3 {
-    background-color: #f26a21;
   }
   #nuestos-valores-container {
     background-color: #f5f5f5;

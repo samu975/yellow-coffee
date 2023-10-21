@@ -150,7 +150,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
             <img
               src={Yellow.src}
               alt="Tipo de cafe Coffe Drip"
-              className="w-8/12"
+              className="w-6/12"
             />
             <p>Yellow Coffee</p>
           </div>
@@ -178,7 +178,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
             <img
               src={Accesories.src}
               alt="Tipo de café Yellow 2500"
-              className="w-8/12"
+              className="w-10/12"
             />
             <p>Accesorios</p>
           </div>
@@ -191,7 +191,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
           <div
             className="flex flex-col justify-end gap-1 items-center"
             onClick={() => {
-              navigateTo('/yellow-coffee/drip');
+              navigateTo('/yellow-coffee/coffeedrip');
             }}
           >
             <img
@@ -204,7 +204,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
           <div
             className="flex flex-col justify-end gap-1 items-center"
             onClick={() => {
-              navigateTo('/yellow-coffee/340');
+              navigateTo('/yellow-coffee/340gr');
             }}
           >
             <img
@@ -217,7 +217,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
           <div
             className="flex flex-col justify-end gap-1 items-center"
             onClick={() => {
-              navigateTo('/yellow-coffee/2500');
+              navigateTo('/yellow-coffee/2500gr');
             }}
           >
             <img
@@ -233,7 +233,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
           className="w-full pb-4 pt-4 flex justify-around text-xs -mb-[68px] fixed z-50 opacity-90 menu-content"
           style={{ backgroundColor: '#E9E5E1' }}
           onClick={() => {
-            navigateTo('/mush-coffee/drip');
+            navigateTo('/mush-coffee/coffeedrip');
           }}
         >
           <div className="flex flex-col justify-end gap-1 items-center">
@@ -247,7 +247,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
           <div
             className="flex flex-col justify-end gap-1 items-center"
             onClick={() => {
-              navigateTo('/mush-coffee/40');
+              navigateTo('/mush-coffee/40gr');
             }}
           >
             <img
@@ -260,7 +260,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
           <div
             className="flex flex-col justify-end gap-1 items-center"
             onClick={() => {
-              navigateTo('/mush-coffee/125');
+              navigateTo('/mush-coffee/125gr');
             }}
           >
             <img

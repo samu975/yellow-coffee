@@ -1,0 +1,28 @@
+---
+import Product from '../../../components/Product.astro';
+import Drip from '../../../assets/yellow-coffee/drip.png';
+import Variedades from '../../../assets/yellow-coffee/variedades.png';
+import Altura from '../../../assets/yellow-coffee/altura.png';
+import Acentos from '../../../assets/yellow-coffee/acentos.png';
+import Estilo from '../../../assets/yellow-coffee/estilo.png';
+---
+
+<Product
+  imagenProducto={Drip}
+  nombreProducto={'Coffee Drip'}
+  descripcionesProducto={[
+    {
+      titulo: 'Caja x10 drips',
+      descripcion: '10 gramos de café por drip',
+      precio: '$20.000',
+    },
+    {
+      titulo: 'Venta por Unidad',
+      descripcion: '10 gramos de café por drip',
+      precio: '$20.000',
+    },
+  ]}
+  caracteristicas={[Variedades, Altura, Acentos]}
+  estilo={Estilo}
+  tipoProducto="yellow"
+/>

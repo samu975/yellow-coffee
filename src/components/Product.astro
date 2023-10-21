@@ -1,0 +1,116 @@
+---
+import { Image } from 'astro:assets';
+import Carousel from './react/Carousel';
+import ConCadaTasaDeCafe from './ConCadaTasaDeCafe.astro';
+import Layout from '../layouts/Layout.astro';
+import Footer from './Footer.astro';
+import CartIcon from '../assets/shop-bag-icon-white.svg';
+import ProductYellow from '../assets/Cafe_340.png';
+import ProductBlue from '../assets/Yellow_Drip.png';
+import ProductGray from '../assets/Mush_Coffee_drip.png';
+import ProductRed from '../assets/Mush_Coffe.png';
+import ProductOrange from '../assets/cafe_2500.png';
+import ProductPink from '../assets/Accesorios.png';
+
+interface Props {
+  imagenProducto: any;
+  nombreProducto: any;
+  descripcionesProducto: {
+    titulo: string;
+    descripcion: string;
+    precio?: string;
+  }[];
+  caracteristicas: any[];
+  estilo: any;
+  tipoProducto: string;
+}
+
+const imagenesCarousel = [
+  ProductYellow.src,
+  ProductBlue.src,
+  ProductGray.src,
+  ProductRed.src,
+  ProductOrange.src,
+  ProductPink.src,
+];
+
+const {
+  imagenProducto,
+  nombreProducto,
+  descripcionesProducto,
+  caracteristicas,
+  estilo,
+  tipoProducto,
+} = Astro.props;
+---
+
+<Layout title={`${nombreProducto}`}>
+  <main class="mt-20 mr-20 w-full">
+    <div class="flex justify-center p-10">
+      <Image src={imagenProducto} alt={`Imagen de ${nombreProducto}`} />
+    </div>
+    <div class="flex justify-between mt-6">
+      <div>
+        <h1 class="ml-6 font-bold text-2xl leading-none">
+          {nombreProducto.split(' ')[0]}
+          <br />
+          {nombreProducto.split(' ')[1]}
+        </h1>
+      </div>
+      <div
+        class="rounded-lg px-3 py-1 text-sm flex mr-6 text-white h-1/2 mt-5"
+        style={{ backgroundColor: '#64c7d1' }}
+      >
+        Ordenar ahora <Image
+          src={CartIcon}
+          alt={'Boton de bolsa de compras'}
+          class={'ml-2 w-1/11'}
+        />
+      </div>
+    </div>
+    <div class="p-1 mb-8 w-11/12 mx-auto">
+      {
+        descripcionesProducto.map((descripcion) => (
+          <div class="flex justify-between mt-4 border border-solid border-gray-500 rounded-lg p-2 mx-2 ">
+            <div class="ml-2">
+              <h2 class="font-bold text-md">{descripcion.titulo}</h2>
+              <p class="text-xs">{descripcion.descripcion}</p>
+            </div>
+            {descripcion.precio && (
+              <div class="flex flex-col text-xs mr-6 mt-2.5">
+                <p>Precio de</p>
+                <p>{descripcion.precio}</p>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+    <div class="flex flex-col">
+      {
+        caracteristicas.map((imagenCaracteristica, index) => (
+          <Image
+            src={imagenCaracteristica}
+            alt={`Característica ${index + 1}`}
+            class="rounded-lg mx-auto my-2 w-10/12"
+          />
+        ))
+      }
+    </div>
+    <div class="mx-auto px-8 w-10/12 my-8">
+      <Image src={estilo} alt={`Estilo`} />
+    </div>
+    <ConCadaTasaDeCafe bgColor="#f5f5f5" textColor="#000000" />
+    <h3 class="text-2xl font-bold text-black text-center mb-6">
+      Más <span class="productos_style">Productos</span>.
+    </h3>
+    <Carousel images={imagenesCarousel} client:only />
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  .productos_style {
+    color: #f26a21;
+  }
+</style>
