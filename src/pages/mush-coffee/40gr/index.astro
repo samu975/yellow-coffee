@@ -1,0 +1,19 @@
+---
+import Product from '../../../components/ProductMush.astro';
+import Img40gr from '../../../assets/mush-coffee/40gr.png';
+import SecondaryImg from '../../../assets/mush-coffee/secondary-340.png';
+---
+
+<Product
+  imagenProducto={Img40gr}
+  imagenSecondary={SecondaryImg}
+  nombreProducto={'Mush Coffee'}
+  tamañoProducto="40 gr"
+  descripcionesProducto={[
+    {
+      titulo: '40gr',
+      descripcion: "Café de especialidad + Lion's Mane",
+      precio: '$20.000',
+    },
+  ]}
+/>

@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
+import CarouselWthArrows from './react/CarouselWthArrows';
 import Carousel from './react/Carousel';
 import ConCadaTasaDeCafe from './ConCadaTasaDeCafe.astro';
 import Layout from '../layouts/Layout.astro';
 import Footer from './Footer.astro';
 import CartIcon from '../assets/shop-bag-icon-white.svg';
-import ProductYellow from '../assets/Cafe_340.png';
+import ProductYellowImg from '../assets/Cafe_340.png';
 import ProductBlue from '../assets/Yellow_Drip.png';
 import ProductGray from '../assets/Mush_Coffee_drip.png';
 import ProductRed from '../assets/Mush_Coffe.png';
@@ -14,6 +15,7 @@ import ProductPink from '../assets/Accesorios.png';
 
 interface Props {
   imagenProducto: any;
+  imagenSecondary: any;
   nombreProducto: any;
   descripcionesProducto: {
     titulo: string;
@@ -25,8 +27,18 @@ interface Props {
   tipoProducto: string;
 }
 
+const {
+  imagenProducto,
+  imagenSecondary,
+  nombreProducto,
+  descripcionesProducto,
+  caracteristicas,
+  estilo,
+  tipoProducto,
+} = Astro.props;
+
 const imagenesCarousel = [
-  ProductYellow.src,
+  ProductYellowImg.src,
   ProductBlue.src,
   ProductGray.src,
   ProductRed.src,
@@ -34,21 +46,12 @@ const imagenesCarousel = [
   ProductPink.src,
 ];
 
-const {
-  imagenProducto,
-  nombreProducto,
-  descripcionesProducto,
-  caracteristicas,
-  estilo,
-  tipoProducto,
-} = Astro.props;
+const imagenesProduct = [imagenProducto.src, imagenSecondary.src];
 ---
 
 <Layout title={`${nombreProducto}`}>
-  <main class="mt-20 mr-20 w-full">
-    <div class="flex justify-center p-10">
-      <Image src={imagenProducto} alt={`Imagen de ${nombreProducto}`} />
-    </div>
+  <main class="mt-16 mr-20 w-full">
+    <CarouselWthArrows images={imagenesProduct} client:only />
     <div class="flex justify-between mt-6">
       <div>
         <h1 class="ml-6 font-bold text-2xl leading-none">
