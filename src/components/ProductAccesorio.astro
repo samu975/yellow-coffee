@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import CarouselWthArrows from '../components/react/CarouselWthArrows';
+import Carousel from '../components/react/Carousel';
+import ConCadaTasaDeCafe from '../components/ConCadaTasaDeCafe.astro';
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import CartIcon from '../assets/shop-bag-icon-white.svg';
+import ProductYellow from '../assets/Cafe_340.png';
+import ProductBlue from '../assets/Yellow_Drip.png';
+import ProductGray from '../assets/Mush_Coffee_drip.png';
+import ProductRed from '../assets/Mush_Coffe.png';
+import ProductOrange from '../assets/cafe_2500.png';
+import ProductPink from '../assets/Accesorios.png';
+
+interface Props {
+  imagenProducto: any;
+  imagenSecondary: any;
+  nombreProducto: any;
+  descripcionesProducto: {
+    titulo: string;
+    descripcion: string;
+    precio?: string;
+  }[];
+  estilo: any;
+}
+
+const {
+  imagenProducto,
+  imagenSecondary,
+  nombreProducto,
+  descripcionesProducto,
+  estilo,
+} = Astro.props;
+
+const imagenesCarousel = [
+  ProductYellow.src,
+  ProductBlue.src,
+  ProductGray.src,
+  ProductRed.src,
+  ProductOrange.src,
+  ProductPink.src,
+];
+
+const imagenesProduct = [imagenProducto.src, imagenSecondary.src];
+---
+
+<Layout title={`${nombreProducto}`}>
+  <main class="mt-16 mr-20 w-full">
+    <CarouselWthArrows images={imagenesProduct} client:only />
+    <div class="flex mt-6 items-center">
+      <div class="flex flex-1">
+        <h1 class="ml-6 font-bold text-2xl leading-none w-f">
+          {nombreProducto}
+        </h1>
+      </div>
+      <div
+        class="rounded-lg px-3 py-1 text-sm flex mr-6 text-white h-1/2 justify-self-center"
+        style={{ backgroundColor: '#64c7d1' }}
+      >
+        Ordenar ahora <Image
+          src={CartIcon}
+          alt={'Boton de bolsa de compras'}
+          class={'ml-2 w-1/11'}
+        />
+      </div>
+    </div>
+    <div class="p-1 mb-8 w-11/12 mx-auto">
+      {
+        descripcionesProducto.map((descripcion) => (
+          <div class="descripcion_producto flex justify-between mt-4 rounded-lg p-2 mx-2 ">
+            <div class="ml-2 flex justify-center items-center">
+              <h2 class="font-bold text-md">{descripcion.titulo}</h2>
+            </div>
+            {descripcion.precio ? (
+              <div class="flex flex-col text-xs mr-6 justify-center">
+                <p>Precio de</p>
+                <p>{descripcion.precio}</p>
+              </div>
+            ) : (
+              <div class="text-xs mx-3 w-[50%]">
+                <p>Precio depende del contenido</p>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+    <div class="mx-auto px-8 w-10/12 my-8">
+      <Image src={estilo} alt={`Estilo`} />
+    </div>
+    <ConCadaTasaDeCafe bgColor="#f5f5f5" textColor="#000000" />
+    <h3 class="text-2xl font-bold text-black text-center mb-6">
+      Más <span class="productos_style">Productos</span>.
+    </h3>
+    <Carousel images={imagenesCarousel} client:only />
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  .descripcion_producto {
+    background-color: #f5f5f5;
+  }
+  .productos_style {
+    color: #f26a21;
+  }
+</style>

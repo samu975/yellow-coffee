@@ -12,31 +12,25 @@ import ProductGray from '../assets/Mush_Coffee_drip.png';
 import ProductRed from '../assets/Mush_Coffe.png';
 import ProductOrange from '../assets/cafe_2500.png';
 import ProductPink from '../assets/Accesorios.png';
+import HongoSvg from '../assets/mush-coffee/hongo.png';
+import CoffeesSvg from '../assets/mush-coffee/coffess.png';
+import TazaSvg from '../assets/mush-coffee/taza.png';
+import Estilo from '../assets/yellow-coffee/estilo.png';
 
 interface Props {
   imagenProducto: any;
   imagenSecondary: any;
   nombreProducto: string;
-  tamañoProducto: string;
-  descripcionesProducto: {
+  cantidades: {
     titulo: string;
     descripcion: string;
-    precio?: string;
+    description2?: string;
+    precio: string;
   }[];
-  caracteristicas: any[];
-  estilo: any;
-  tipoProducto: string;
 }
 
-const {
-  imagenProducto,
-  imagenSecondary,
-  nombreProducto,
-  descripcionesProducto,
-  caracteristicas,
-  estilo,
-  tipoProducto,
-} = Astro.props;
+const { imagenProducto, imagenSecondary, nombreProducto, cantidades } =
+  Astro.props;
 
 const imagenesCarousel = [
   ProductYellowImg.src,
@@ -52,6 +46,197 @@ const imagenesProduct = [imagenProducto.src, imagenSecondary.src];
 
 <Layout title={`${nombreProducto}`}>
   <main class="mt-16 mr-20 w-full">
-    <CarouselWthArrows images={imagenesCarousel} client:only />
+    <CarouselWthArrows images={imagenesProduct} client:only />
+    <div class="flex mt-10 items-center pl-6">
+      <div class="secondary-font flex flex-col text-xl flex-1">
+        <h1>Mush Coffee</h1>
+        <h2>{nombreProducto}</h2>
+      </div>
+      <div
+        class="rounded-xl px-3 py-1 text-sm flex text-white mr-3"
+        style={{ backgroundColor: '#64c7d1' }}
+      >
+        Ordenar ahora <Image
+          src={CartIcon}
+          alt={'Boton de bolsa de compras'}
+          class={'ml-2 w-1/11'}
+        />
+      </div>
+    </div>
+    <div class="my-6">
+      {
+        cantidades.map((cantidad) => (
+          <div class="descripcion_producto flex justify-between mt-2 rounded-lg p-2 mx-2 border border-solid border-gray-500">
+            <div class="ml-2 flex flex-col">
+              <h2 class="font-bold text-md">{cantidad.titulo}</h2>
+              <p class="text-xs">
+                {cantidad.descripcion}
+                <br />
+                {cantidad.description2}
+              </p>
+            </div>
+            {cantidad.precio ? (
+              <div class="flex flex-col text-xs mr-2 justify-center">
+                <p>Precio de</p>
+                <p>{cantidad.precio}</p>
+              </div>
+            ) : (
+              <div class="text-xs mx-3 w-[50%]">
+                <p>Precio depende del contenido</p>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+    <section class="mb-6">
+      <h3 class="px-6 text-2xl font-extrabold my-6 text-center">
+        Contenido por taza
+      </h3>
+      <div
+        class="descripcion_producto flex justify-between mt-2 rounded-lg p-2 bg-dark my-4 mx-2"
+      >
+        <div class="ml-2 flex flex-col">
+          <h2 class="font-bold text-md">1000 miligramos</h2>
+          <p class="text-xs">de Lion's Mane</p>
+        </div>
+        <div>
+          <Image src={HongoSvg} alt={'Hongo de Mush Coffee'} class={'w-full'} />
+        </div>
+      </div>
+      <div
+        class="descripcion_producto flex justify-between mt-2 rounded-lg p-2 mx-2 border border-solid border-gray-500"
+      >
+        <div class="ml-2 flex flex-col">
+          <h2 class="font-bold text-md">10 gramos</h2>
+          <p class="text-xs">de café especial</p>
+        </div>
+
+        <div class="flex flex-col text-xs mr-2 justify-center text-right">
+          <p>+85</p>
+          <p>puntos</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-6">
+      <h3 class="px-6 text-2xl font-extrabold my-6 text-center">
+        Características del café
+      </h3>
+      <div
+        class="border border-solid border-gray-500 flex justify-between mt-2 rounded-lg p-2 my-4 mx-2"
+      >
+        <div class="ml-2 flex flex-col">
+          <h2 class="font-bold text-md">Variedades</h2>
+          <p class="text-xs">Castillo, Caturra y Colombia</p>
+        </div>
+        <div>
+          <Image
+            src={CoffeesSvg}
+            alt={'icono de cafés Mush Coffee'}
+            class={'w-full'}
+          />
+        </div>
+      </div>
+      <div
+        class="border border-solid border-gray-500 flex justify-between mt-2 rounded-lg p-2 my-4 mx-2"
+      >
+        <div class="ml-2 flex flex-col">
+          <h2 class="font-bold text-md">Acentos</h2>
+          <p class="text-xs">
+            Notas cítricas:
+            <br />
+             limón, toronja, naranja
+          </p>
+        </div>
+        <div>
+          <Image src={TazaSvg} alt={'icono de taza'} class={'w-full'} />
+        </div>
+      </div>
+    </section>
+    <div class="my-4 p-4">
+      <Image
+        src={Estilo}
+        alt={'Imagen estilo fuerte, ligero'}
+        class={'w-9/12 mx-auto'}
+      />
+    </div>
+    <section class="my-6">
+      <h3 class="secondary-font text-3xl text-center my-4">Mush Coffee</h3>
+      <h4 class="text-gray-400 text-center text-sm">
+        Café de especialidad + Lion's Mane
+      </h4>
+
+      <div class="flex flex-col my-6 gap-8">
+        <div
+          class="bg-blue-hongos text-white flex flex-col mx-3 px-8 py-12 w-[300px] h-[280px]"
+        >
+          <h4 class="uppercase">Lion's mane.</h4>
+          <p>
+            Es un hongo adaptógeno y medicinal que facilita la claridad mental y
+            beneficia la concentración.
+          </p>
+        </div>
+        <div class="bg-brain flex flex-col mx-3 px-8 py-12 w-[300px] h-[280px]">
+          <h4 class="uppercase">
+            Polisacáridos
+            <br />
+             y erinacinas
+          </h4>
+          <p>
+            que protegen y estimulan el crecimiento de las neuronas, mejorando
+            la función cerebral.
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col my-6 gap-8">
+        <div class="bg-heart flex flex-col mx-3 px-8 py-8 w-[300px] h-[280px]">
+          <h4 class="uppercase">Beta-glucanos</h4>
+          <p>
+            que fortalecen la salud digestiva, apoyan al sistema inmunológico y
+            aumentan la diversidad de la microbiota intestinal.
+          </p>
+        </div>
+      </div>
+    </section>
+    <ConCadaTasaDeCafe bgColor="#f5f5f5" textColor="#000000" />
+    <h3 class="text-2xl font-bold text-black text-center mb-6">
+      Más <span class="productos_style">Productos</span>.
+    </h3>
+    <Carousel images={imagenesCarousel} client:only />
+    <Footer />
   </main>
 </Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+  .secondary-font {
+    font-family: 'Calistoga', cursive;
+    letter-spacing: 1px;
+  }
+  .bg-dark {
+    background-color: #fafafa;
+  }
+
+  .bg-blue-hongos {
+    background-image: url('../assets/mush-coffee/blue-hongos.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-brain {
+    background-image: url('../assets/mush-coffee/brain.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-heart {
+    background-image: url('../assets/mush-coffee/heart.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .productos_style {
+    color: #f26a21;
+  }
+</style>

@@ -2,6 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 
 import '../../css/carouselArrows.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 interface CarouselProps {
   images: string[];
@@ -61,7 +63,7 @@ const Carousel = ({ images = [] }: CarouselProps) => {
     <Slider {...settings}>
       {images.map((img, idx) => (
         <div key={idx} className="image-container px-10 py-4">
-          <img src={img} alt={`Imagen ${idx}`} />
+          <img src={img} className="max-w-sm w-full" alt={`Imagen ${idx}`} />
         </div>
       ))}
     </Slider>
