@@ -74,9 +74,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
         </div>
         <div className="flex w-2/3 justify-end md:justify-center">
           <div className="flex gap-6 items-center md:hidden">
-            <div>
-              <img src={SearchIcon.src} alt="Icono de buscador" />
-            </div>
+            
             <div className="menu-icon">
               <img
                 src={CartIcon.src}

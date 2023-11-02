@@ -5,6 +5,7 @@ import Instagram from '../assets/components/footer/instagram.svg';
 import Whatsapp from '../assets/components/footer/whatsapp.svg';
 import bgImage from '../assets/components/footer/logo-contacto-recortado.svg';
 import { Image } from 'astro:assets';
+import AcercaDeNosotrosImg from '../assets/AcercaDeNosotrosFooter.png';
 
 const bgImageUrl = bgImage.src;
 ---
@@ -17,11 +18,15 @@ const bgImageUrl = bgImage.src;
     <div id="left" class="w-1/2 flex flex-col justify-around">
       <div>
         <ul class="text-white/80 flex flex-col">
-          <li><a href="" class="">Yellow Coffee</a></li>
-          <li class="mt-2"><a href="">Mush Coffee</a></li>
-          <li class="mt-2"><a href="">Accesorios</a></li>
-          <li class="mt-2"><a href="/nosotros">Acerca de nostros</a></li>
-          <li class="mt-2"><a href="/contacto">Contáctanos</a></li>
+          <li class="uppercase"><a href="">Yellow Coffee</a></li>
+          <li class="mt-2 uppercase"><a href="">Mush Coffee</a></li>
+          <li class="mt-2 uppercase"><a href="">Accesorios</a></li>
+          <li class="mt-4">
+            <a href="/nosotros"
+              ><Image src={AcercaDeNosotrosImg} alt={'acerca de nosotros'} /></a
+            >
+          </li>
+          <li class="mt-4 uppercase"><a href="/contacto">Contáctanos</a></li>
         </ul>
       </div>
       <div class="flex gap-3">
