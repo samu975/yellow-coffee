@@ -112,7 +112,7 @@ const imagenesCarousel = [
     >
       Buscamos honrar
     </h2>
-    <p class="text-xl text-center px-4 mb-6">
+    <p class="text-xl text-center px-4 mb-6 albert">
       Cada parte del proceso <strong>humano, animal y natural</strong> que tiene
       nuestro café.
     </p>
@@ -150,12 +150,22 @@ const imagenesCarousel = [
   >
   </div>
 </section>
-<section id="trabajamos-con">
-  <Image src={TrabajamosCon} alt={'Imagen de un bosque de cultivo de café'} />
+<section
+  id="trabajamos-con"
+  class="albert h-[440px] flex flex-col justify-center items-center gap-4"
+>
+  <h3 class="text-white font-bold text-2xl text-center">
+    Trabajamos <br /> con victimas <br /> y ex combatientes
+  </h3>
+  <p class="abert text-white px-6 text-center font-normal">
+    Del conflicto armado colombiano en el departamento de Nariño desde un punto
+    de vista en donde cada ser importa.
+  </p>
 </section>
 <Footer />
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;600;700&display=swap');
   #inicio {
     margin-top: 68px;
   }
@@ -165,5 +175,33 @@ const imagenesCarousel = [
   .title--buscamos-honrar {
     font-size: 28px;
     line-height: 32px;
+    font-family: 'Albert Sans', sans-serif;
+  }
+  .albert {
+    font-family: 'Albert Sans', sans-serif;
+  }
+
+  #trabajamos-con {
+    position: relative;
+    background-image: url('../assets/Trabajamosconv2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #trabajamos-con::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  #trabajamos-con > * {
+    position: relative;
   }
 </style>

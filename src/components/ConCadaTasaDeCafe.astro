@@ -11,20 +11,20 @@ const { bgColor, textColor } = Astro.props;
 
 <div
   id="nosotros-card-3"
-  class="mx-4 px-8 pt-10 pb-0 rounded-xl mb-6"
+  class="mx-4 pt-10 pb-0 rounded-xl mb-6"
   style={{ backgroundColor: `${bgColor}` }}
 >
   <h3
-    class="uppercase mb-6 font-bold text-2xl"
+    class="uppercase mb-6 font-bold text-2xl px-8 text-center"
     style={{ color: `${textColor}` }}
   >
     Con cada taza
   </h3>
-  <p class="text-lg" style={{ color: `${textColor}` }}>
+  <p class="text-lg px-8 text-center" style={{ color: `${textColor}` }}>
     de café Yellow Coffee, estas contribuyendo a un proceso ambiental y social
-    <div>
+    <div class="w-full">
       <Image
-        class="-mt-40"
+        class="-mt-40 w-full"
         src={ManosConCafe}
         alt={'Imagen de unas manos con una taza de café'}
       />
