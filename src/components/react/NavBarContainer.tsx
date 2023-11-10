@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 //Imagenes
 import Logo from '../../assets/Sello_Logo.svg';
-import SearchIcon from '../../assets/search.svg';
 import CartIcon from '../../assets/shop-bag-icon.svg';
 import BurguerMenu from '../../assets/burguer_menu.svg';
 import SlideMenu from './SideMenu';
@@ -208,7 +207,7 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
             <img
               src={Yellow340.src}
               alt="Tipo de café yellow 340 gr"
-              className="w-8/12"
+              className="w-6/12"
             />
             <p>Yellow 340gr</p>
           </div>
@@ -219,9 +218,9 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
             }}
           >
             <img
-              src={Yellow2500.src}
+              src={Yellow340.src}
               alt="Tipo de café Yellow 2500"
-              className="w-8/12"
+              className="w-6/12"
             />
             <p>Yellow 2500gr</p>
           </div>
@@ -249,9 +248,9 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
             }}
           >
             <img
-              src={Mush40.src}
+              src={Mush125.src}
               alt="Tipo de café mush 40 gr"
-              className="w-7/12"
+              className="w-9/12"
             />
             <p>Mush 40gr</p>
           </div>
@@ -270,9 +269,9 @@ const NavBarContainer = ({ navBarElements }: NavBarContainerProps) => {
           </div>
           <div className="flex flex-col justify-end gap-1 items-center">
             <img
-              src={Mush340.src}
+              src={Mush125.src}
               alt="Tipo de café Mush 340"
-              className="w-9/12"
+              className="w-8/12"
             />
             <p>Mush 340gr</p>
           </div>
