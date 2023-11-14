@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+interface typeCoffeeProps {
+  title: string;
+  description: string;
+  linkRef: string;
+  linkText: string;
+  image: any;
+}
+
+const { title, description, linkRef, linkText, image } =
+  Astro.props as typeCoffeeProps;
+---
+
+<div class="w-[360px] pb-16">
+  <div class="h-36 flex flex-col items-center justify-center my-12">
+    <h3 class="opacity-75 font-bold text-3xl">{title}</h3>
+    <p class="font-extralight my-2 text-xl">
+      {description}
+    </p>
+    <a href={linkRef} class="text-blue-600">
+      {linkText}
+    </a>
+  </div>
+  <div class="flex justify-center items-center h-72">
+    <Image alt={'Imagen de producto'} src={image} class="w-[220px]" />
+  </div>
+</div>

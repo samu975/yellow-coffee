@@ -1,0 +1,67 @@
+---
+import '../css/indexDesktop.css';
+import LogoCorner from '../assets/desktop/header/Logo_corner.svg';
+import WppButton from '../assets/desktop/header/wpp_button.svg';
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const linksNavegacion = [
+  {
+    href: '/yellow-coffee',
+    label: 'Yellow Coffee',
+  },
+  {
+    href: '/mush-coffee',
+    label: 'Mush Coffee',
+  },
+  {
+    href: '/accesorios',
+    label: 'Accesorios',
+  },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+  </head>
+  <body>
+    <header class="absolute top-0 w-full z-20 text-white px-4 py-4">
+      <nav class="w-full flex justify-between items-center">
+        <div>
+          <a href="/">
+            <Image src={LogoCorner} alt="Logo" />
+          </a>
+        </div>
+        <div>
+          <ul
+            class="w-full flex justify-center gap-4 bg-transparent relative left-16"
+          >
+            {
+              linksNavegacion.map((link) => {
+                return (
+                  <li>
+                    <a href={link.href}>{link.label}</a>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+        <div class="w-1/6">
+          <a href="https://wa.me/5491130500000">
+            <Image src={WppButton} alt="Boton a whatsapp" />
+          </a>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>

@@ -16,8 +16,6 @@ import ProductPink from '../assets/Accesorios.png';
 import YellowCoffeeTitle from '../assets/Sello_Logo_completo.svg';
 import PersonasTomandoCafe from '../assets/PersonasTomandoCafe.png';
 
-import TrabajamosCon from '../assets/trabajamos-con-bg.png';
-
 import BuscamosHonrarImg from '../assets/index-perro-buscamos-honrar.png';
 
 // React
@@ -25,7 +23,24 @@ import Carousel from '../components/react/Carousel.tsx';
 
 //Astro
 import Footer from '../components/Footer.astro';
-import TestComponent from '../components/react/TestComponent';
+import LayoutDesktop from '../layouts/LayoutDesktop.astro';
+import TypeCoffeeDesktop from '../components/desktop/TypeCoffeeDesktop.astro';
+
+// Imagenes Desktop
+import PrincipalImage from '../assets/desktop/principal_layot.png';
+import CreadoConAmorTitleDesktop from '../assets/desktop/Creado_con_Amor.png';
+import ProductMushImg from '../assets/desktop/mush.png';
+import ProductYellowImg from '../assets/desktop/yellow.png';
+import ProductAccesoriesImg from '../assets/desktop/accesorios.png';
+import BuscamosHonrarDesktop from '../assets/desktop/buscamos-honrar.png';
+
+// Carousel desktop
+import YellowDesktop from '../assets/desktop/carousel/Café340.png';
+import BlueDesktop from '../assets/desktop/carousel/Drip.png';
+import GrayDesktop from '../assets/desktop/carousel/Mush.png';
+import OrangeDesktop from '../assets/desktop/carousel/2500.png';
+import PinkDesktop from '../assets/desktop/carousel/Accesorios.png';
+import FooterDesktop from '../components/FooterDesktop.astro';
 
 const imagenesCarousel = [
   ProductYellow.src,
@@ -35,134 +50,223 @@ const imagenesCarousel = [
   ProductOrange.src,
   ProductPink.src,
 ];
+
+const imageCarouselDesktop = [
+  YellowDesktop.src,
+  BlueDesktop.src,
+  GrayDesktop.src,
+  PinkDesktop.src,
+  OrangeDesktop.src,
+];
 ---
 
-<Layout title="Bienvenido a Yellow Coffee.">
-  <section
-    id="inicio"
-    class="w-full flex flex-col md:mt-0 items-center mb-8 md:flex-row md:py8"
-  >
-    <div class="md:ml-10 md:mt-10">
-      <h1 hidden>Bienvenido a Yellow Coffee.</h1>
-      <Image
-        class="max-w-[full]"
-        src={CoffeeImageMain}
-        alt="Imagen de manos cargando frutas"
-      />
-    </div>
-    <div>
-      <div class="w-full flex justify-center items-center">
+<!-- Mobile ------------------------------ -->
+<div class="md:hidden">
+  <Layout title="Bienvenido a Yellow Coffee.">
+    <section
+      id="inicio"
+      class="w-full flex flex-col md:mt-0 items-center mb-8 md:flex-row md:py8"
+    >
+      <div class="md:ml-10 md:mt-10">
+        <h1 hidden>Bienvenido a Yellow Coffee.</h1>
         <Image
-          class="max-w-full px-4 mt-8 md:w-1/2"
-          src={CreadoConAmorTitle}
-          alt="Titulo principal: Creado con amor"
+          class="max-w-[full]"
+          src={CoffeeImageMain}
+          alt="Imagen de manos cargando frutas"
         />
       </div>
-      <div class="md:ml-10 px-5 flex">
-        <p class="text-center text-2xl font-principal md:text-3xl md:px-2">
-          El valor del individuo está no solo en sí mismo, sino en la comunidad
-          y viceversa, es la lógica del ‘soy porque somos’.
-        </p>
+      <div>
+        <div class="w-full flex justify-center items-center">
+          <Image
+            class="max-w-full px-4 mt-8 md:w-1/2"
+            src={CreadoConAmorTitle}
+            alt="Titulo principal: Creado con amor"
+          />
+        </div>
+        <div class="md:ml-10 px-5 flex">
+          <p class="text-center text-2xl font-principal md:text-3xl md:px-2">
+            El valor del individuo está no solo en sí mismo, sino en la
+            comunidad y viceversa, es la lógica del ‘soy porque somos’.
+          </p>
+        </div>
+      </div>
+    </section>
+  </Layout>
+  <div class="md:hidden relative z-0">
+    <!-- <TestComponent client:load /> -->
+    <Carousel images={imagenesCarousel} client:only />
+  </div>
+  <section
+    id="productos"
+    class="hidden md:flex md:flex-col md:items-center md:my-10"
+  >
+    <div>
+      <h2 class="mb-4 font-bold md:text-3xl md:mb-8">
+        Nuestros <span id="text-naranja" class="text-naranja">Productos</span>.
+      </h2>
+    </div>
+    <div class="">
+      <div class="md:flex md:flex-row">
+        <div class="md:w-1/3">
+          <Image src={ProductYellow} alt={'Producto café 340'} />
+        </div>
+        <div class="md:w-1/3">
+          <Image src={ProductBlue} alt={'Producto café coffee drip'} />
+        </div>
+        <div class="md:w-1/3">
+          <Image src={ProductGray} alt={'Producto café mush coffee'} />
+        </div>
+      </div>
+      <div class="md:flex md:flex-row">
+        <div class="md:w-1/3">
+          <Image src={ProductRed} alt={'Producto café mush coffee'} />
+        </div>
+        <div class="md:w-1/3">
+          <Image src={ProductOrange} alt={'Producto café 2500'} />
+        </div>
+        <div class="md:w-1/3">
+          <Image src={ProductPink} alt={'Producto café Accesorios'} />
+        </div>
       </div>
     </div>
   </section>
-</Layout>
-<div class="md:hidden relative z-0">
-  <!-- <TestComponent client:load /> -->
-  <Carousel images={imagenesCarousel} client:only />
-</div>
-<section
-  id="productos"
-  class="hidden md:flex md:flex-col md:items-center md:my-10"
->
-  <div>
-    <h2 class="mb-4 font-bold md:text-3xl md:mb-8">
-      Nuestros <span id="text-naranja" class="text-naranja">Productos</span>.
-    </h2>
-  </div>
-  <div class="">
-    <div class="md:flex md:flex-row">
-      <div class="md:w-1/3">
-        <Image src={ProductYellow} alt={'Producto café 340'} />
-      </div>
-      <div class="md:w-1/3">
-        <Image src={ProductBlue} alt={'Producto café coffee drip'} />
-      </div>
-      <div class="md:w-1/3">
-        <Image src={ProductGray} alt={'Producto café mush coffee'} />
-      </div>
+  <section id="buscamos-honrar" class="m-4 rounded-2xl">
+    <div class="flex flex-col items-center justify-center">
+      <h2
+        class="mb-6 md:text-7xl font-bold md:mb-10 mt-10 title--buscamos-honrar"
+      >
+        Buscamos honrar
+      </h2>
+      <p class="text-xl text-center px-4 mb-6 albert">
+        Cada parte del proceso <strong>humano, animal y natural</strong> que
+        tiene nuestro café.
+      </p>
+      <a href="" class="text-blue-500">Ver más ></a>
     </div>
-    <div class="md:flex md:flex-row">
-      <div class="md:w-1/3">
-        <Image src={ProductRed} alt={'Producto café mush coffee'} />
-      </div>
-      <div class="md:w-1/3">
-        <Image src={ProductOrange} alt={'Producto café 2500'} />
-      </div>
-      <div class="md:w-1/3">
-        <Image src={ProductPink} alt={'Producto café Accesorios'} />
-      </div>
+    <div class="-mt-36">
+      <Image src={BuscamosHonrarImg} alt={'imagen de un perro'} />
     </div>
-  </div>
-</section>
-<section id="buscamos-honrar" class="m-4 rounded-2xl">
-  <div class="flex flex-col items-center justify-center">
-    <h2
-      class="mb-6 md:text-7xl font-bold md:mb-10 mt-10 title--buscamos-honrar"
-    >
-      Buscamos honrar
-    </h2>
-    <p class="text-xl text-center px-4 mb-6 albert">
-      Cada parte del proceso <strong>humano, animal y natural</strong> que tiene
-      nuestro café.
-    </p>
-    <a href="" class="text-blue-500">Ver más ></a>
-  </div>
-  <div class="-mt-36">
-    <Image src={BuscamosHonrarImg} alt={'imagen de un perro'} />
-  </div>
-</section>
-<div
-  class="my-8 mx-auto divider border-t-2 w-5/6 border-gray-300 border-solid md:mt-14 md:w-11/12"
->
-</div>
-<section class="w-full flex flex-col mt-2 mb-4 md:flex-row md:justify-evenly">
-  <div class="flex flex-col items-center justify-center mb-8 md:w-1/2">
-    <Image
-      alt={'Titulo secundario: Yellow Coffe'}
-      src={YellowCoffeeTitle}
-      class="w-1/2"
-    />
-    <p class="px-10 text-center font-light text-2xl md:text-3xl md:px-6">
-      Una marca enfocada en expandir lo creado con amor a partir de los vínculos
-      que tenemos desde espacios colectivos y sociales.
-    </p>
-  </div>
-  <div class="flex flex-col items-center md:w-1/2">
-    <Image
-      class="w-full"
-      alt={'Imagen de dos personas tomando café'}
-      src={PersonasTomandoCafe}
-    />
-  </div>
+  </section>
   <div
-    class="mt-8 mx-auto divider border-t-2 w-5/6 border-gray-300 border-solid md:mt-14 md:w-11/12"
+    class="my-8 mx-auto divider border-t-2 w-5/6 border-gray-300 border-solid md:mt-14 md:w-11/12"
   >
   </div>
-</section>
-<section
-  id="trabajamos-con"
-  class="albert h-[440px] flex flex-col justify-center items-center gap-4"
->
-  <h3 class="text-white font-bold text-2xl text-center">
-    Trabajamos <br /> con victimas <br /> y ex combatientes
-  </h3>
-  <p class="abert text-white px-6 text-center font-normal">
-    Del conflicto armado colombiano en el departamento de Nariño desde un punto
-    de vista en donde cada ser importa.
-  </p>
-</section>
-<Footer />
+  <section class="w-full flex flex-col mt-2 mb-4 md:flex-row md:justify-evenly">
+    <div class="flex flex-col items-center justify-center mb-8 md:w-1/2">
+      <Image
+        alt={'Titulo secundario: Yellow Coffe'}
+        src={YellowCoffeeTitle}
+        class="w-1/2"
+      />
+      <p class="px-10 text-center font-light text-2xl md:text-3xl md:px-6">
+        Una marca enfocada en expandir lo creado con amor a partir de los
+        vínculos que tenemos desde espacios colectivos y sociales.
+      </p>
+    </div>
+    <div class="flex flex-col items-center md:w-1/2">
+      <Image
+        class="w-full"
+        alt={'Imagen de dos personas tomando café'}
+        src={PersonasTomandoCafe}
+      />
+    </div>
+    <div
+      class="mt-8 mx-auto divider border-t-2 w-5/6 border-gray-300 border-solid md:mt-14 md:w-11/12"
+    >
+    </div>
+  </section>
+  <section
+    id="trabajamos-con"
+    class="albert h-[440px] flex flex-col justify-center items-center gap-4"
+  >
+    <h3 class="text-white font-bold text-2xl text-center">
+      Trabajamos <br /> con victimas <br /> y ex combatientes
+    </h3>
+    <p class="abert text-white px-6 text-center font-normal">
+      Del conflicto armado colombiano en el departamento de Nariño desde un
+      punto de vista en donde cada ser importa.
+    </p>
+  </section>
+  <Footer />
+</div>
+<!-- Desktop ------------------------------ -->
+<div class="hidden md:block">
+  <LayoutDesktop title="Inicio" />
+  <main class="flex flex-col">
+    <Image src={PrincipalImage} alt={'Imagen principal'} />
+    <div class="absolute w-1/4 top-1/2 left-20">
+      <Image src={CreadoConAmorTitleDesktop} alt={'Creado con amor'} />
+      <p class="text-2xl text-white mt-3 albert">
+        El valor del individuo está no solo en sí mismo, sino en la comunidad y
+        viceversa, es la lógica del ‘soy porque somos’.
+      </p>
+    </div>
+    <section class="flex justify-around items-center">
+      <TypeCoffeeDesktop
+        title="Yellow Coffee"
+        description="Café de especialidad"
+        linkRef="/yellow-coffee"
+        linkText="Ver más presentaciones >"
+        image={ProductYellowImg}
+      />
+      <TypeCoffeeDesktop
+        title="Mush Coffee"
+        description="Café de especialidad + Lion's Mane"
+        linkRef="/mush-coffee"
+        linkText="Ver más presentaciones >"
+        image={ProductMushImg}
+      />
+      <TypeCoffeeDesktop
+        title="Accesorios"
+        description="Nuestro estilo"
+        linkRef="accesorios"
+        linkText="Ver todos los accesorios >"
+        image={ProductAccesoriesImg}
+      />
+    </section>
+    <section class="w-full bg-[#fafafa]">
+      <a href="/nosotros">
+        <Image src={BuscamosHonrarDesktop} alt={'Buscamos honrar'} />
+      </a>
+    </section>
+    <section class="flex">
+      <div class="flex flex-col items-center md:w-1/2">
+        <Image
+          class="w-full"
+          alt={'Imagen de dos personas tomando café'}
+          src={PersonasTomandoCafe}
+        />
+      </div>
+      <div class="flex flex-col items-center justify-center mb-8 md:w-1/2">
+        <Image
+          alt={'Titulo secundario: Yellow Coffe'}
+          src={YellowCoffeeTitle}
+          class="w-1/2"
+        />
+        <p class="px-10 text-center font-light text-2xl md:text-3xl md:px-6">
+          Una marca enfocada en expandir lo creado con amor a partir de los
+          vínculos que tenemos desde espacios colectivos y sociales.
+        </p>
+      </div>
+    </section>
+    <section
+      id="trabajamos-con"
+      class="albert h-[440px] flex flex-col justify-center items-center gap-4"
+    >
+      <h3 class="text-white font-extrabold text-5xl text-center">
+        Trabajamos <br /> con victimas <br /> y ex combatientes
+      </h3>
+      <p
+        class="abert text-white text-2xl px-6 text-center font-extralight w-[450px]"
+      >
+        Del conflicto armado colombiano en el departamento de Nariño desde un
+        punto de vista en donde cada ser importa.
+      </p>
+    </section>
+    <Carousel images={imageCarouselDesktop} client:only />
+  </main>
+  <FooterDesktop />
+</div>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;600;700&display=swap');

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="384" height="67" viewBox="0 0 384 67">
+  <defs>
+    <filter id="Rectangle_134" x="0" y="0" width="384" height="67" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#fff" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_315" data-name="Group 315" transform="translate(-1527 -4)">
+    <g transform="matrix(1, 0, 0, 1, 1527, 4)" filter="url(#Rectangle_134)">
+      <rect id="Rectangle_134-2" data-name="Rectangle 134" width="366" height="49" rx="22" transform="translate(9 8)" fill="#40e55d"/>
+    </g>
+    <g id="Group_314" data-name="Group 314" transform="translate(59 0.5)">
+      <text id="Realiza_tu_pedido_por_Whatsapp" data-name="Realiza tu pedido por Whatsapp" transform="translate(1646 43)" fill="#fff" font-size="20" font-family="AlbertSans-Regular, Albert Sans"><tspan x="-146" y="0">Realiza tu pedido por Whatsapp</tspan></text>
+      <path id="whatsapp" d="M13.6,2.326A7.854,7.854,0,0,0,7.994,0,7.934,7.934,0,0,0,1.121,11.891L0,16l4.2-1.1a7.933,7.933,0,0,0,3.79.965H8A7.926,7.926,0,0,0,13.6,2.326ZM7.994,14.521a6.573,6.573,0,0,1-3.356-.92l-.24-.144L1.9,14.111l.666-2.433-.156-.251a6.587,6.587,0,1,1,5.58,3.094Zm3.615-4.934c-.2-.1-1.17-.578-1.353-.646s-.315-.1-.445.1-.513.646-.627.775-.232.148-.43.05A5.409,5.409,0,0,1,7.162,8.88a6.046,6.046,0,0,1-1.1-1.372c-.114-.2-.011-.3.088-.4s.2-.232.3-.346a1.264,1.264,0,0,0,.2-.33.369.369,0,0,0-.015-.347c-.05-.1-.445-1.076-.612-1.47s-.323-.335-.445-.34-.247-.007-.38-.007a.729.729,0,0,0-.529.247,2.22,2.22,0,0,0-.691,1.654,3.838,3.838,0,0,0,.81,2.049,8.808,8.808,0,0,0,3.383,2.992,11.021,11.021,0,0,0,1.129.418,2.721,2.721,0,0,0,1.246.08,2.052,2.052,0,0,0,1.338-.943,1.659,1.659,0,0,0,.114-.943c-.049-.084-.182-.133-.38-.232Z" transform="translate(1806.036 29)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
