@@ -8,144 +8,251 @@ import Footer from '../../components/Footer.astro';
 import ImagenPrincipal from '../../assets/nosotros/principal-image.png';
 import HombreConCafe from '../../assets/nosotros/hombre-con-cafe.png';
 import MujerConCafe from '../../assets/nosotros/mujer-con-cafe.png';
+import ManosConCafe from '../../assets/nosotros/manos-con-cafe.png';
 import NuestrosValores from '../../assets/nosotros/nuestos-valores.svg';
 import Nosotros from '../../assets/nosotros/nosotros.svg';
 import Card1Parrafo from '../../assets/nosotros/card-1-parrafo.svg';
 import Card2Parrafo from '../../assets/nosotros/card-2-parrafo.svg';
 import ConCadaTasaDeCafe from '../../components/ConCadaTasaDeCafe.astro';
+import LayoutDesktop from '../../layouts/LayoutDesktop.astro';
+
+//Imagenes Desktop
+import RecolectoresDesktop from '../../assets/desktop/nosotros/principal2.png';
+import NuestrosValoresDesktop from '../../assets/desktop/nosotros/nuestros_valores.png';
+import FooterDesktop from '../../components/FooterDesktop.astro';
 ---
 
-<Layout title="Acerca de Yellow Coffee">
-  <main class="p-0 m-0 box-border mb-8 mt-14">
-    <section
-      id="inicio"
-      class="w-full flex flex-col md:mt-0 items-center mb-8 md:flex-row md:py-8"
-    >
-      <div class="md:ml-10 md:mt-10">
-        <h1 hidden>Acerca de Yellow Coffee</h1>
-        <Image
-          class="max-w-full mt-[70px] md:w-1/2"
-          src={ImagenPrincipal}
-          alt="Cultivadores de café sonriendo a la camara"
-        />
-      </div>
-    </section>
+<div class="md:hidden">
+  <Layout title="Acerca de Yellow Coffee">
+    <main class="p-0 m-0 box-border mb-8 mt-14">
+      <section
+        id="inicio"
+        class="w-full flex flex-col md:mt-0 items-center mb-8 md:flex-row md:py-8"
+      >
+        <div class="md:ml-10 md:mt-10">
+          <h1 hidden>Acerca de Yellow Coffee</h1>
+          <Image
+            class="max-w-full mt-[70px] md:w-1/2"
+            src={ImagenPrincipal}
+            alt="Cultivadores de café sonriendo a la camara"
+          />
+        </div>
+      </section>
+      <section
+        id="acerca-de-nosotros"
+        class="flex flex-col justify-center items-center"
+      >
+        <div class="mb-8">
+          <h1 class="font-bold text-xl">
+            Acerca de <span hidden>nosotros</span>
+          </h1>
+          <Image src={Nosotros} alt={'Titulo secundario: Acerca de nosotros'} />
+        </div>
+        <div id="nosotros-card-1" class="mx-4 px-8 pt-10 pb-0 rounded-xl mb-6">
+          <h3 class="uppercase mb-6 text-white font-bold text-2xl">Disfruta</h3>
+          <p hidden>
+            de un café especial, cosechado por manos de caficultores dedicados y
+            altruistas
+          </p>
+          <Image
+            class="w-10/12 mb-8"
+            src={Card1Parrafo}
+            alt={'Parrafo: Disfruta de un café especial, cosechado por manos de caficultores dedicados y altruistas'}
+          />
+          <div>
+            <Image
+              src={HombreConCafe}
+              alt={'Imagen de un hombre con una taza de café'}
+            />
+          </div>
+        </div>
+        <div id="nosotros-card-2" class="mx-4 px-8 pt-10 pb-0 rounded-xl mb-6">
+          <h3 class="uppercase mb-6 text-white font-bold text-2xl">
+            Un porcentaje
+          </h3>
+          <p hidden>
+            de nuestras ventas ayudan a mantener un modelo local de economia
+            colaborativa, sostenible y sustentable junto a las familias de
+            caficultores
+          </p>
+          <Image
+            class="w-10/12 mb-8"
+            src={Card2Parrafo}
+            alt={'Parrafo: de nuestras ventas ayudan a mantener un modelo local de economia colaborativa, sostenible y sustentable junto a las familias de caficultores'}
+          />
+          <div>
+            <Image
+              src={MujerConCafe}
+              alt={'Imagen de una mujer con una taza de café'}
+            />
+          </div>
+        </div>
+        <ConCadaTasaDeCafe bgColor="#f26a21" textColor="#ffffff" />
+      </section>
+      <section
+        id="nuestros-valores"
+        class="flex flex-col justify-center items-center"
+      >
+        <div class="mb-6">
+          <Image
+            src={NuestrosValores}
+            alt={'Titulo secundario: Nuestros valores'}
+          />
+        </div>
+        <div class="pt-4 px-6 mx-4 rounded-xl" id="nuestos-valores-container">
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold mt-2" id="amor-title">Amor</h3>
+            <p class="text-lg opacity-50 mt-2">
+              Porque es el comienzo y el fin de todo lo existente. Es nuestra
+              guía en todo lo que hacemos: es lo que cultivamos, recibimos y
+              entregamos como seres que coexistimos con quienes nos rodean
+            </p>
+          </div>
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold mt-2" id="equidad-title">Equidad</h3>
+            <p class="text-lg opacity-50 mt-2">
+              Es el cómo entendemos y aplicamos lo justo. Sabemos que todas y
+              doso somos distintos, por lo que nos enfocamos en dar un
+              acompañamiento cercano a cada ser involucrado en nuestra marca.
+            </p>
+          </div>
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold mt-2" id="honestidad-title">
+              Honestidad
+            </h3>
+            <p class="text-lg opacity-50 mt-2">
+              La transparencia en el ser y en el hacer para que todo florezca.
+              <br />
+               Nuestros vínculos están guiados, desde la base, por aquello que
+              nos construye para vivir en armonía, cultivando el relacionarnos
+              desde la confíanza para romper con esas barreras que nos alejan.
+            </p>
+          </div>
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold mt-2" id="empatia-title">Empatía</h3>
+            <p class="text-lg opacity-50 mt-2">
+              Lo que genera las conexiones profundas con los demás seres y el
+              mundo en sí mismo.
+              <br />
+               Defendemos el sentir como un acto revolucionario, porque para
+              vivir en un mundo armonioso, necesitamos crearlo desde nuestros
+              corazones y nuestras acciones alineadas.
+            </p>
+          </div>
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold mt-2" id="paz-title">Paz</h3>
+            <p class="text-lg opacity-50 mt-2">
+              La construimos entre todas y todos, desde el 'soy' para el 'somos'
+              y viceversa. Es un acto que requiere ser cultivado a diario.
+              Mantenerla es gracias a la suma del entendimiento y el debido
+              procesamiento de lo que sucede con nuestro sentir, pensar y
+              actuar, tanto individual como el colectivo.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </Layout>
+</div>
+<div class="hidden md:block">
+  <LayoutDesktop title="nosotros" />
+  <main class="flex flex-col">
+    <Image src={RecolectoresDesktop} alt={'imagen de recolectores de café'} />
     <section
       id="acerca-de-nosotros"
       class="flex flex-col justify-center items-center"
     >
-      <div class="mb-8">
-        <h1 class="font-bold text-xl">
+      <div class="my-16">
+        <h1 class="font-bold text-center text-4xl">
           Acerca de <span hidden>nosotros</span>
         </h1>
-        <Image src={Nosotros} alt={'Titulo secundario: Acerca de nosotros'} />
-      </div>
-      <div id="nosotros-card-1" class="mx-4 px-8 pt-10 pb-0 rounded-xl mb-6">
-        <h3 class="uppercase mb-6 text-white font-bold text-2xl">Disfruta</h3>
-        <p hidden>
-          de un café especial, cosechado por manos de caficultores dedicados y
-          altruistas
-        </p>
         <Image
-          class="w-10/12 mb-8"
-          src={Card1Parrafo}
-          alt={'Parrafo: Disfruta de un café especial, cosechado por manos de caficultores dedicados y altruistas'}
-        />
-        <div>
-          <Image
-            src={HombreConCafe}
-            alt={'Imagen de un hombre con una taza de café'}
-          />
-        </div>
-      </div>
-      <div id="nosotros-card-2" class="mx-4 px-8 pt-10 pb-0 rounded-xl mb-6">
-        <h3 class="uppercase mb-6 text-white font-bold text-2xl">
-          Un porcentaje
-        </h3>
-        <p hidden>
-          de nuestras ventas ayudan a mantener un modelo local de economia
-          colaborativa, sostenible y sustentable junto a las familias de
-          caficultores
-        </p>
-        <Image
-          class="w-10/12 mb-8"
-          src={Card2Parrafo}
-          alt={'Parrafo: de nuestras ventas ayudan a mantener un modelo local de economia colaborativa, sostenible y sustentable junto a las familias de caficultores'}
-        />
-        <div>
-          <Image
-            src={MujerConCafe}
-            alt={'Imagen de una mujer con una taza de café'}
-          />
-        </div>
-      </div>
-      <ConCadaTasaDeCafe bgColor="#f26a21" textColor="#ffffff" />
-    </section>
-    <section
-      id="nuestros-valores"
-      class="flex flex-col justify-center items-center"
-    >
-      <div class="mb-6">
-        <Image
-          src={NuestrosValores}
-          alt={'Titulo secundario: Nuestros valores'}
+          src={Nosotros}
+          alt={'Titulo secundario: Acerca de nosotros'}
+          class="w-[340px]"
         />
       </div>
-      <div class="pt-4 px-6 mx-4 rounded-xl" id="nuestos-valores-container">
-        <div class="mb-12">
-          <h3 class="text-2xl font-bold mt-2" id="amor-title">Amor</h3>
-          <p class="text-lg opacity-50 mt-2">
-            Porque es el comienzo y el fin de todo lo existente. Es nuestra guía
-            en todo lo que hacemos: es lo que cultivamos, recibimos y entregamos
-            como seres que coexistimos con quienes nos rodean
+      <div class="flex justify-around">
+        <div
+          id="nosotros-card-1"
+          class="mx-4 px-8 pt-10 pb-0 rounded-xl mb-6 w-1/3 relative"
+        >
+          <h3 class="uppercase mb-6 text-white font-bold text-2xl">Disfruta</h3>
+          <p hidden>
+            de un café especial, cosechado por manos de caficultores dedicados y
+            altruistas
           </p>
+          <Image
+            class="w-10/12 mb-8"
+            src={Card1Parrafo}
+            alt={'Parrafo: Disfruta de un café especial, cosechado por manos de caficultores dedicados y altruistas'}
+          />
+          <div>
+            <Image
+              src={HombreConCafe}
+              alt={'Imagen de un hombre con una taza de café'}
+              class="absolute bottom-0 left-0"
+            />
+          </div>
         </div>
-        <div class="mb-12">
-          <h3 class="text-2xl font-bold mt-2" id="equidad-title">Equidad</h3>
-          <p class="text-lg opacity-50 mt-2">
-            Es el cómo entendemos y aplicamos lo justo. Sabemos que todas y doso
-            somos distintos, por lo que nos enfocamos en dar un acompañamiento
-            cercano a cada ser involucrado en nuestra marca.
-          </p>
-        </div>
-        <div class="mb-12">
-          <h3 class="text-2xl font-bold mt-2" id="honestidad-title">
-            Honestidad
+        <div
+          id="nosotros-card-2"
+          class="mx-4 pt-10 pb-0 rounded-xl mb-6 w-1/3 relative"
+        >
+          <h3 class="uppercase mb-6 text-white font-bold text-2xl px-8">
+            Un porcentaje
           </h3>
-          <p class="text-lg opacity-50 mt-2">
-            La transparencia en el ser y en el hacer para que todo florezca.
-            <br />
-             Nuestros vínculos están guiados, desde la base, por aquello que nos
-            construye para vivir en armonía, cultivando el relacionarnos desde
-            la confíanza para romper con esas barreras que nos alejan.
+          <p hidden>
+            de nuestras ventas ayudan a mantener un modelo local de economia
+            colaborativa, sostenible y sustentable junto a las familias de
+            caficultores
           </p>
+          <Image
+            class="w-10/12 mb-8 pl-8"
+            src={Card2Parrafo}
+            alt={'Parrafo: de nuestras ventas ayudan a mantener un modelo local de economia colaborativa, sostenible y sustentable junto a las familias de caficultores'}
+          />
+          <div>
+            <Image
+              class={'-mt-80'}
+              src={ManosConCafe}
+              alt={'Imagen de unas manos sosteniendo un café'}
+            />
+          </div>
         </div>
-        <div class="mb-12">
-          <h3 class="text-2xl font-bold mt-2" id="empatia-title">Empatía</h3>
-          <p class="text-lg opacity-50 mt-2">
-            Lo que genera las conexiones profundas con los demás seres y el
-            mundo en sí mismo.
-            <br />
-             Defendemos el sentir como un acto revolucionario, porque para vivir
-            en un mundo armonioso, necesitamos crearlo desde nuestros corazones
-            y nuestras acciones alineadas.
+        <div
+          class="w-1/3 bg-[#F26A21] mx-4 px-8 pt-10 pb-0 rounded-xl mb-6 relative"
+        >
+          <h3 class="uppercase mb-6 text-white font-bold text-2xl">
+            Un porcentaje
+          </h3>
+          <p class="text-2xl text-white">
+            de café Yellow Coffee, estás contribuyendo a un proceso ambiental y
+            social.
           </p>
+          <div>
+            <Image
+              src={MujerConCafe}
+              alt={'Imagen de una mujer con una taza de café'}
+              class="absolute bottom-0 right-0"
+            />
+          </div>
         </div>
-        <div class="mb-12">
-          <h3 class="text-2xl font-bold mt-2" id="paz-title">Paz</h3>
-          <p class="text-lg opacity-50 mt-2">
-            La construimos entre todas y todos, desde el 'soy' para el 'somos' y
-            viceversa. Es un acto que requiere ser cultivado a diario.
-            Mantenerla es gracias a la suma del entendimiento y el debido
-            procesamiento de lo que sucede con nuestro sentir, pensar y actuar,
-            tanto individual como el colectivo.
-          </p>
+      </div>
+    </section>
+    <section class="my-20">
+      <div class="w-full text-center">
+        <h3 class="text-3xl my-3">Nuestros</h3>
+        <h2 class="text-6xl my-3">Valores.</h2>
+        <div class="flex justify-center my-16">
+          <Image src={NuestrosValoresDesktop} alt={'Nuestros valores'} />
         </div>
       </div>
     </section>
   </main>
-  <Footer />
-</Layout>
+  <FooterDesktop />
+</div>
 
 <style>
   #nosotros-card-1 {
