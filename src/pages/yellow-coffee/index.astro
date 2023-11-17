@@ -1,14 +1,88 @@
 ---
+import ProductDesktop from '../../components/ProductDesktop.astro';
 import ProductsMenu from '../../components/ProductsMenu.astro';
 import Layout from '../../layouts/Layout.astro';
+import LayoutDesktop from '../../layouts/LayoutDesktop.astro';
+import FooterDesktop from '../../components/FooterDesktop.astro';
+import Carousel from '../../components/react/Carousel';
+
+// Iamgenes
+import Drip from '../../assets/desktop/yellow/Drip yellow.png';
+import Yellow340 from '../../assets/desktop/yellow/yellow 340.png';
+import Microlotes from '../../assets/desktop/yellow/yellow 340 Microlote.png';
+import Yellow2500 from '../../assets/desktop/yellow/Yellow 2500.png';
+import BannerYellow from '../../assets/desktop/yellow/Banner yellow.png';
+import { Image } from 'astro:assets';
+
+// Imagenes Carousel Desktop
+import YellowDesktop from '../../assets/desktop/carousel/Café340.png';
+import BlueDesktop from '../../assets/desktop/carousel/Drip.png';
+import GrayDesktop from '../../assets/desktop/carousel/Mush.png';
+import PinkDesktop from '../../assets/desktop/carousel/Accesorios.png';
+import OrangeDesktop from '../../assets/desktop/carousel/2500.png';
+
+const principalUrl = '/yellow-coffee';
+
+const imageCarouselDesktop = [
+  YellowDesktop.src,
+  BlueDesktop.src,
+  GrayDesktop.src,
+  PinkDesktop.src,
+  OrangeDesktop.src,
+];
 ---
 
-<Layout title="Yellow Coffee">
-  <ProductsMenu
-    title="Yellow Coffee"
-    linksList={['Coffee Drip', '340 gr', '2500 gr', 'Microlotes']}
-    titleColor="#64C7D2"
-    titleDescription="está disponible en: "
-    href="/yellow-coffee"
-  />
-</Layout>
+<div class="md:hidden">
+  <Layout title="Yellow Coffee">
+    <ProductsMenu
+      title="Yellow Coffee"
+      linksList={['Coffee Drip', '340 gr', '2500 gr', 'Microlotes']}
+      titleColor="#64C7D2"
+      titleDescription="está disponible en: "
+      href="/yellow-coffee"
+    />
+  </Layout>
+</div>
+<div class="hidden md:block">
+  <LayoutDesktop title="Yellow Coffee" textcolor="black" />
+  <section class="flex flex-col pt-40 px-12">
+    <h2 class="text-[#575757] font-bold text-3xl mb-12">Yellow Coffe</h2>
+    <div class="flex justify-center gap-4 flex-wrap mb-12">
+      <ProductDesktop
+        Imagen={Drip}
+        presentacion={true}
+        title="Drip"
+        linksrc={`${principalUrl}/coffeedrip`}
+      />
+      <ProductDesktop
+        Imagen={Yellow340}
+        presentacion={true}
+        title="340gr"
+        linksrc={`${principalUrl}/340gr`}
+      />
+      <ProductDesktop
+        Imagen={Microlotes}
+        presentacion={true}
+        title="Microlotes"
+        linksrc={`${principalUrl}/microlotes`}
+      />
+      <ProductDesktop
+        Imagen={Yellow2500}
+        presentacion={true}
+        title="2500gr"
+        linksrc={`${principalUrl}/2500gr`}
+      />
+    </div>
+  </section>
+  <section class="w-full p-0 m-0">
+    <Image
+      src={BannerYellow}
+      alt={'Banner de yellow coffee'}
+      class={'w-full'}
+    />
+  </section>
+  <div class="my-6">
+    <Carousel images={imageCarouselDesktop} client:only />
+  </div>
+  <FooterDesktop />
+</div>

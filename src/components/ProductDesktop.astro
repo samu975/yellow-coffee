@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+  Imagen: any;
+  presentacion: boolean;
+  title: string;
+  linksrc: string;
+}
+
+const { Imagen, presentacion, title, linksrc } = Astro.props;
+---
+
+<div class="card flex flex-col bg-[#f5f5f5] px-8 py-12">
+  <div class="flex items-center mb-10 px-16 h-[250px]">
+    <Image src={Imagen} alt={title} class="object-cover w-[100px]" />
+  </div>
+  <div class="flex flex-col justify-center items-center">
+    {presentacion && <h4 class="font-light">Presentación</h4>}
+    <h3 class="font-light">{title}</h3>
+    <a href={linksrc} class="font-semibold text-blue-600">Características ></a>
+  </div>
+</div>

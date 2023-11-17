@@ -1,14 +1,108 @@
 ---
 import ProductsMenu from '../../components/ProductsMenu.astro';
 import Layout from '../../layouts/Layout.astro';
+import ProductDesktop from '../../components/ProductDesktop.astro';
+import LayoutDesktop from '../../layouts/LayoutDesktop.astro';
+import FooterDesktop from '../../components/FooterDesktop.astro';
+import Carousel from '../../components/react/Carousel';
+
+// Iamgenes
+import Drip from '../../assets/desktop/mush/Drip Mush.png';
+import Mush40gr from '../../assets/desktop/mush/Mush 40gr.png';
+import Mush125gr from '../../assets/desktop/mush/Mush 125.png';
+import Mush340gr from '../../assets/desktop/mush/Mush 340.png';
+import BannerYellow from '../../assets/desktop/yellow/Banner yellow.png';
+import BannerMush from '../../assets/desktop/mush/Banner mush.png';
+
+// Imagenes Carousel Desktop
+import YellowDesktop from '../../assets/desktop/carousel/Café340.png';
+import BlueDesktop from '../../assets/desktop/carousel/Drip.png';
+import GrayDesktop from '../../assets/desktop/carousel/Mush.png';
+import PinkDesktop from '../../assets/desktop/carousel/Accesorios.png';
+import OrangeDesktop from '../../assets/desktop/carousel/2500.png';
+import { Image } from 'astro:assets';
+
+const principalUrl = '/mush-coffee';
+
+const imageCarouselDesktop = [
+  YellowDesktop.src,
+  BlueDesktop.src,
+  GrayDesktop.src,
+  PinkDesktop.src,
+  OrangeDesktop.src,
+];
 ---
 
-<Layout title="Mush Coffee">
-  <ProductsMenu
-    title="Mush Coffee"
-    linksList={['Coffee Drip', '40 gr', '125 gr', '340 gr']}
-    titleColor="#F37836"
-    titleDescription="está disponible en: "
-    href="/mush-coffee"
-  />
-</Layout>
+<div class="md:hidden">
+  <Layout title="Mush Coffee">
+    <ProductsMenu
+      title="Mush Coffee"
+      linksList={['Coffee Drip', '40 gr', '125 gr', '340 gr']}
+      titleColor="#F37836"
+      titleDescription="está disponible en: "
+      href="/mush-coffee"
+    />
+  </Layout>
+</div>
+<div class="hidden md:block">
+  <LayoutDesktop title="Mush Coffee" textcolor="black" />
+  <section class="flex flex-col pt-40 px-12">
+    <h2 class="text-[#575757] font-bold text-3xl mb-12 secondary-font">
+      Mush Coffe
+    </h2>
+    <div class="flex justify-center gap-4 flex-wrap mb-12">
+      <ProductDesktop
+        Imagen={Drip}
+        presentacion={true}
+        title="Drip"
+        linksrc={`${principalUrl}/coffeedrip`}
+      />
+      <ProductDesktop
+        Imagen={Mush40gr}
+        presentacion={true}
+        title="40gr"
+        linksrc={`${principalUrl}/40gr`}
+      />
+      <ProductDesktop
+        Imagen={Mush125gr}
+        presentacion={true}
+        title="125gr"
+        linksrc={`${principalUrl}/125gr`}
+      />
+      <ProductDesktop
+        Imagen={Mush340gr}
+        presentacion={true}
+        title="340gr"
+        linksrc={`${principalUrl}/340gr`}
+      />
+    </div>
+  </section>
+  <section class="w-full p-0 m-0">
+    <Image src={BannerMush} alt={'Banner de Mush coffee'} class={'w-full'} />
+  </section>
+  <section>
+    <!-- Todo: 
+
+    traer las tarjetas de mush -->
+  </section>
+  <section class="w-full p-0 m-0">
+    <Image
+      src={BannerYellow}
+      alt={'Banner de yellow coffee'}
+      class={'w-full'}
+    />
+  </section>
+  <div class="my-6">
+    <Carousel images={imageCarouselDesktop} client:only />
+  </div>
+  <FooterDesktop />
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+  .secondary-font {
+    font-family: 'Calistoga', cursive;
+    letter-spacing: 1px;
+  }
+</style>
