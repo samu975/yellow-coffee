@@ -1,14 +1,16 @@
 ---
 import '../css/indexDesktop.css';
 import LogoCorner from '../assets/desktop/header/Logo_corner.svg';
+import LogoCornerBlack from '../assets/desktop/header/Logo_corner_black.svg';
 import WppButton from '../assets/desktop/header/wpp_button.svg';
 import { Image } from 'astro:assets';
 
 interface Props {
   title: string;
+  textcolor?: string;
 }
 
-const { title } = Astro.props;
+const { title, textcolor = 'white' } = Astro.props;
 const linksNavegacion = [
   {
     href: '/yellow-coffee',
@@ -34,11 +36,14 @@ const linksNavegacion = [
     <meta name="author" content="SitePoint" />
   </head>
   <body>
-    <header class="absolute top-0 w-full z-20 text-white px-4 py-4">
+    <header class={`absolute top-0 w-full z-20 text-${textcolor} px-4 py-4`}>
       <nav class="w-full flex justify-between items-center">
         <div>
           <a href="/">
-            <Image src={LogoCorner} alt="Logo" />
+            <Image
+              src={textcolor === 'black' ? LogoCornerBlack : LogoCorner}
+              alt="Logo"
+            />
           </a>
         </div>
         <div>

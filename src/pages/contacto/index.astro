@@ -5,55 +5,119 @@ import DistribuidorTitle from '../../assets/distribuidorConfianzaTitle.png';
 import Layout from '../../layouts/Layout.astro';
 import WhatsappIcon from '../../assets/components/footer/instagram.svg';
 import Footer from '../../components/Footer.astro';
+import FooterDesktop from '../../components/FooterDesktop.astro';
+import LayoutDesktop from '../../layouts/LayoutDesktop.astro';
+import PerroDeLogoNegro from '../../assets/desktop/header/Logo_corner_black.svg';
+import SelloLogoVerde from '../../assets/desktop/contacto/SelloLogoVerde.svg';
 ---
 
-<Layout title="Sobre Yellow Coffee">
+<div class="md:hidden">
+  <Layout title="Sobre Yellow Coffee">
+    <section id="contacto" class="mt-14 pt-24 md:pt-12 w-full">
+      <div class="flex flex-col pl-8 md:pl-28 w-9/12 md:w-7/12 pb-20">
+        <h2 class="text-3xl mb-6 md:text-7xl font-bold md:mb-10">
+          Contáctanos.
+        </h2>
+        <h3 class="mb-4 text-2xl font-bold md:text-4xl md:mb-10">
+          Ventas por Whatsapp
+        </h3>
+        <p class="text-xl mb-4 md:text-3xl">
+          <span class="text-green-600">Whatsapp</span> es un medio muy
+          conveniente para hacer pedidos de forma rápida y sencilla. Tú puedes
+          escribirnos o llamarnos al número <br />
+          <span>+(57) 3196117933.</span>
+        </p>
+        <a
+          href=""
+          class="bg-green-400 flex justify-center items-center py-2 pl-3 pr-1 text-white rounded-xl button-wpp mb-4"
+        >
+          Envianos un mensaje <span
+            ><Image
+              src={WhatsappIcon}
+              alt={'Logo de whatsapp'}
+              class={'ml-2'}
+            /></span
+          >
+        </a>
+        <Image
+          src={DistribuidorTitle}
+          alt={'Titulo '}
+          class="mb-4 w-fit md:w-10/12"
+        />
+        <p class="font-principal text-xl mb-6 relative z-10 md:text-3xl">
+          Para un contacto corporativo, por favor envíanos un correo a
+          <span class="text-naranja">yellowcoffeecol@gmail.com.</span>
+        </p>
+      </div>
+      <div class="-mt-5 md:mt-0 self-end">
+        <Image src={PerritoNegro} alt={'Perrito negro'} class="-mt-24" />
+      </div>
+    </section>
+    <Footer />
+  </Layout>
+</div>
+<div class="hidden md:block">
+  <LayoutDesktop textcolor="black" title="Sobre yellow Coffee" />
   <section
     id="contacto"
-    class="mt-14 pt-24 md:pt-12 w-full md:flex md:flex-row"
+    class="mt-14 pt-24 pl-12 w-full flex justify-between mb-16 overflow-hidden"
   >
-    <div class="flex flex-col pl-8 md:pl-28 w-9/12 md:w-7/12 pb-20">
-      <h2 class="text-3xl mb-6 md:text-7xl font-bold md:mb-10">Contáctanos.</h2>
-      <h3 class="mb-4 text-2xl font-bold md:text-4xl md:mb-10">
-        Ventas por Whatsapp
-      </h3>
-      <p class="text-xl mb-4 md:text-3xl">
-        <span class="text-green-600">Whatsapp</span> es un medio muy conveniente
-        para hacer pedidos de forma rápida y sencilla. Tú puedes escribirnos o
-        llamarnos al número <br />
-        <span>+(57) 3196117933.</span>
-      </p>
-      <a
-        href=""
-        class="bg-green-400 flex justify-center items-center py-2 pl-3 pr-1 text-white rounded-xl button-wpp mb-4"
-      >
-        Envianos un mensaje <span
-          ><Image
-            src={WhatsappIcon}
-            alt={'Logo de whatsapp'}
-            class={'ml-2'}
-          /></span
-        >
-      </a>
-      <Image
-        src={DistribuidorTitle}
-        alt={'Titulo '}
-        class="mb-4 w-fit md:w-10/12"
-      />
-      <p class="font-principal text-xl mb-6 relative z-10 md:text-3xl">
-        Para un contacto corporativo, por favor envíanos un correo a
-        <span class="text-naranja">yellowcoffeecol@gmail.com.</span>
-      </p>
+    <div>
+      <div>
+        <h2 class="text-5xl mb-16 font-bold">Contáctanos.</h2>
+        <h3 class="mb-10 text-3xl font-bold">Ventas por Whatsapp</h3>
+        <p class="text-xl font-light">
+          <span class="text-green-600">Whatsapp</span> es un medio muy
+          conveniente para hacer pedidos de forma rápida y sencilla. <br /> Tú
+          puedes escribirnos o llamarnos al número <br />
+          <span>+(57) 3196117933.</span>
+        </p>
+        <div class="w-[250px]">
+          <a
+            href=""
+            class="bg-green-400 flex justify-center items-center py-2 pl-3 pr-1 text-white rounded-xl button-wpp mb-4"
+          >
+            Envianos un mensaje <span
+              ><Image
+                src={WhatsappIcon}
+                alt={'Logo de whatsapp'}
+                class={'ml-2'}
+              /></span
+            >
+          </a>
+        </div>
+        <div class="mt-10">
+          <h3 class="flex flex-wrap items-center font-bold text-3xl">
+            Quieres convertirte en &nbsp;<div class="flex items-center">
+              distribuid<Image
+                src={PerroDeLogoNegro}
+                alt={'imagen de perrito'}
+                class="w-[20px]"
+              />r
+            </div>, o proponer una aliana.
+          </h3>
+          <p class="font-principal text-xl mb-6">
+            Para un contacto corporativo, por favor envíanos un correo a
+            <span class="text-naranja"> yellowcoffeecol@gmail.com</span>
+          </p>
+        </div>
+      </div>
+
+      <style>
+        .button-wpp {
+          width: 110%;
+        }
+      </style>
     </div>
-    <div class="-mt-5 md:mt-0 self-end">
-      <Image src={PerritoNegro} alt={'Perrito negro'} class="-mt-24" />
+    <div class="w-full">
+      <div class="flex justify-end -mr-12">
+        <Image
+          src={SelloLogoVerde}
+          alt={'Imagen del logo de yellow coffee de color verde'}
+          class={'w-3/6'}
+        />
+      </div>
     </div>
   </section>
-  <Footer />
-</Layout>
-
-<style>
-  .button-wpp {
-    width: 110%;
-  }
-</style>
+  <FooterDesktop />
+</div>
