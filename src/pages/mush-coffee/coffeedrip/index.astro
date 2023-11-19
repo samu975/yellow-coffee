@@ -2,24 +2,39 @@
 import ProductMush from '../../../components/ProductMush.astro';
 import Drip from '../../../assets/mush-coffee/Drip.png';
 import SecondaryImg from '../../../assets/mush-coffee/secondary-340.png';
+
+// Desktop
+import MushDrip from '../../../assets/desktop/mush/products/Mush Drip@3x.png';
+import ProductDetail from '../../../components/desktop/ProductDetail.astro';
 ---
 
-<ProductMush
-  imagenProducto={Drip}
-  imagenSecondary={SecondaryImg}
-  nombreProducto="Drip"
-  cantidades={[
-    {
-      titulo: 'Caja x10 drips',
-      descripcion: 'Café de especialidad',
-      description2: "+ Lion's Mane",
-      precio: '$ 20.000',
-    },
-    {
-      titulo: 'Venta por unidad',
-      descripcion: 'Café de especialidad',
-      description2: "+ Lion's Mane",
-      precio: '$ 20.000',
-    },
-  ]}
-/>
+<div class="md:hidden">
+  <ProductMush
+    imagenProducto={Drip}
+    imagenSecondary={SecondaryImg}
+    nombreProducto="Drip"
+    cantidades={[
+      {
+        titulo: 'Caja x10 drips',
+        descripcion: 'Café de especialidad',
+        description2: "+ Lion's Mane",
+        precio: '$ 20.000',
+      },
+      {
+        titulo: 'Venta por unidad',
+        descripcion: 'Café de especialidad',
+        description2: "+ Lion's Mane",
+        precio: '$ 20.000',
+      },
+    ]}
+  />
+</div>
+
+<div class="hidden md:block">
+  <ProductDetail
+    ProductDetailImg={MushDrip}
+    Drip={true}
+    Mush={true}
+    title={'Café 40gr'}
+  />
+</div>

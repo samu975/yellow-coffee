@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import LayoutDesktop from '../../layouts/LayoutDesktop.astro';
 interface Props {
   ProductDetailImg: any;
-  Banner: any;
+  Banner?: any;
   Drip: boolean;
   Mush: boolean;
   title: string;
@@ -39,12 +39,18 @@ const { ProductDetailImg, Banner, Drip, Mush, title } = Astro.props;
 </div>
 {
   Drip && (
-    <div class="pt-28 mx-10">
+    <div class="py-14 mx-10 -mb-8">
       <Image src={DripImg} alt={title} />
     </div>
   )
 }
-{Mush && <MushBannersSection />}
+{
+  Mush && (
+    <div class="mt-20">
+      <MushBannersSection />
+    </div>
+  )
+}
 
 {
   !Mush && (

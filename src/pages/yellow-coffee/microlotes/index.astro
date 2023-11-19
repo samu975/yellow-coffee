@@ -6,19 +6,34 @@ import ProductSecondary from '../../../assets/yellow-coffee/secondary-340.png';
 import Altura from '../../../assets/yellow-coffee/altura.png';
 import Acentos from '../../../assets/yellow-coffee/acentos.png';
 import Estilo from '../../../assets/yellow-coffee/estilo.png';
+import ProductDetail from '../../../components/desktop/ProductDetail.astro';
+
+//Desktop
+import MicrolotesDesktop from '../../../assets/desktop/yellow/products/Yellow microlotes@3x.png';
+import Banner from '../../../assets/desktop/accesorios/Banner yellow con manos@2x.png';
 ---
 
-<Product
-  imagenProducto={Microlotes}
-  nombreProducto={'Microlotes'}
-  descripcionesProducto={[
-    {
-      titulo: 'Disponibilidad y caracteristicas',
-      descripcion: 'Contáctanos para más información',
-    },
-  ]}
-  caracteristicas={[Variedades, Altura, Acentos]}
-  imagenSecondary={ProductSecondary}
-  estilo={Estilo}
-  tipoProducto="yellow"
-/>
+<div class="md:hidden">
+  <Product
+    imagenProducto={Microlotes}
+    nombreProducto={'Microlotes'}
+    descripcionesProducto={[
+      {
+        titulo: 'Disponibilidad y caracteristicas',
+        descripcion: 'Contáctanos para más información',
+      },
+    ]}
+    caracteristicas={[Variedades, Altura, Acentos]}
+    imagenSecondary={ProductSecondary}
+    estilo={Estilo}
+  />
+</div>
+<div class="hidden md:block">
+  <ProductDetail
+    ProductDetailImg={MicrolotesDesktop}
+    Banner={Banner}
+    Drip={false}
+    Mush={false}
+    title={'Café microlotes'}
+  />
+</div>
