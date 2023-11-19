@@ -11,8 +11,6 @@ import Drip from '../../assets/desktop/mush/Drip Mush.png';
 import Mush40gr from '../../assets/desktop/mush/Mush 40gr.png';
 import Mush125gr from '../../assets/desktop/mush/Mush 125.png';
 import Mush340gr from '../../assets/desktop/mush/Mush 340.png';
-import BannerYellow from '../../assets/desktop/yellow/Banner yellow.png';
-import BannerMush from '../../assets/desktop/mush/Banner mush.png';
 
 // Imagenes Carousel Desktop
 import YellowDesktop from '../../assets/desktop/carousel/Café340.png';
@@ -20,7 +18,7 @@ import BlueDesktop from '../../assets/desktop/carousel/Drip.png';
 import GrayDesktop from '../../assets/desktop/carousel/Mush.png';
 import PinkDesktop from '../../assets/desktop/carousel/Accesorios.png';
 import OrangeDesktop from '../../assets/desktop/carousel/2500.png';
-import { Image } from 'astro:assets';
+import MushBannersSection from '../../components/desktop/MushBannersSection.astro';
 
 const principalUrl = '/mush-coffee';
 
@@ -77,32 +75,18 @@ const imageCarouselDesktop = [
       />
     </div>
   </section>
-  <section class="w-full p-0 m-0">
-    <Image src={BannerMush} alt={'Banner de Mush coffee'} class={'w-full'} />
-  </section>
-  <section>
-    <!-- Todo: 
-
-    traer las tarjetas de mush -->
-  </section>
-  <section class="w-full p-0 m-0">
-    <Image
-      src={BannerYellow}
-      alt={'Banner de yellow coffee'}
-      class={'w-full'}
-    />
-  </section>
+  <MushBannersSection />
   <div class="my-6">
     <Carousel images={imageCarouselDesktop} client:only />
   </div>
   <FooterDesktop />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+    .secondary-font {
+      font-family: 'Calistoga', cursive;
+      letter-spacing: 1px;
+    }
+  </style>
 </div>
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
-
-  .secondary-font {
-    font-family: 'Calistoga', cursive;
-    letter-spacing: 1px;
-  }
-</style>

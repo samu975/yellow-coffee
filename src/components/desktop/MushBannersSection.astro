@@ -1,0 +1,18 @@
+---
+import BannerYellow from '../../assets/desktop/yellow/Banner yellow.png';
+import BannerMush from '../../assets/desktop/mush/Banner mush.png';
+import { Image } from 'astro:assets';
+import MushCards from '../../components/desktop/MushCards.astro';
+---
+
+<section class="w-full p-0 m-0">
+  <Image src={BannerMush} alt={'Banner de Mush coffee'} class={'w-full'} />
+</section>
+<section class="mt-10">
+  <h4 class="text-black text-center text-xl mt-3">Lion's Mane</h4>
+  <h3 class="text-center font-bold text-3xl">está compuesto por:</h3>
+  <MushCards />
+</section>
+<section class="w-full p-0 m-0">
+  <Image src={BannerYellow} alt={'Banner de yellow coffee'} class={'w-full'} />
+</section>

@@ -1,14 +1,88 @@
 ---
+import ProductDesktop from '../../components/ProductDesktop.astro';
 import ProductsMenu from '../../components/ProductsMenu.astro';
 import Layout from '../../layouts/Layout.astro';
+import LayoutDesktop from '../../layouts/LayoutDesktop.astro';
+import { Image } from 'astro:assets';
+import FooterDesktop from '../../components/FooterDesktop.astro';
+
+// imagenes
+import Mugs from '../../assets/desktop/accesorios/Mug@2x.png';
+import Kits from '../../assets/desktop/accesorios/Kits@2x.png';
+import Posters from '../../assets/desktop/accesorios/Poster@2x.png';
+import ToteBag from '../../assets/desktop/accesorios/Tote Bag@2x.png';
+import BannerAccesorios from '../../assets/desktop/accesorios/Banner yellow con manos@2x.png';
+
+// Imagenes Carousel Desktop
+import YellowDesktop from '../../assets/desktop/carousel/Café340.png';
+import BlueDesktop from '../../assets/desktop/carousel/Drip.png';
+import GrayDesktop from '../../assets/desktop/carousel/Mush.png';
+import PinkDesktop from '../../assets/desktop/carousel/Accesorios.png';
+import OrangeDesktop from '../../assets/desktop/carousel/2500.png';
+import Carousel from '../../components/react/Carousel';
+
+const principalUrl = '/accesorios';
+
+const imageCarouselDesktop = [
+  YellowDesktop.src,
+  BlueDesktop.src,
+  GrayDesktop.src,
+  PinkDesktop.src,
+  OrangeDesktop.src,
+];
 ---
 
-<Layout title="Accesorios">
-  <ProductsMenu
-    title="Accesorios"
-    linksList={['Posters', 'Mugs', 'Tote Bags', 'Kits']}
-    titleColor="#E068A7"
-    titleDescription="disponibles: "
-    href="/accesorios"
-  />
-</Layout>
+<div class="md:hidden">
+  <Layout title="Accesorios">
+    <ProductsMenu
+      title="Accesorios"
+      linksList={['Posters', 'Mugs', 'Tote Bags', 'Kits']}
+      titleColor="#E068A7"
+      titleDescription="disponibles: "
+      href="/accesorios"
+    />
+  </Layout>
+</div>
+<div class="hidden md:block">
+  <LayoutDesktop title="Yellow Coffee" textcolor="black" />
+  <section class="flex flex-col pt-40 px-12">
+    <h2 class="text-[#575757] font-bold text-3xl mb-12">Yellow Coffe</h2>
+    <div class="flex justify-center gap-4 flex-wrap mb-12">
+      <ProductDesktop
+        Imagen={Mugs}
+        presentacion={false}
+        title="Mugs"
+        linksrc={`${principalUrl}/mugs`}
+      />
+      <ProductDesktop
+        Imagen={ToteBag}
+        presentacion={false}
+        title="Tote Bags"
+        linksrc={`${principalUrl}/totebags`}
+      />
+      <ProductDesktop
+        Imagen={Posters}
+        presentacion={false}
+        title="Posters"
+        linksrc={`${principalUrl}/posters`}
+      />
+      <ProductDesktop
+        Imagen={Kits}
+        presentacion={false}
+        title="Kits"
+        linksrc={`${principalUrl}/kits`}
+      />
+    </div>
+  </section>
+  <section class="w-full p-0 m-0">
+    <Image
+      src={BannerAccesorios}
+      alt={'Banner de yellow coffee'}
+      class={'w-full'}
+    />
+  </section>
+  <div class="my-6">
+    <Carousel images={imageCarouselDesktop} client:only />
+  </div>
+  <FooterDesktop />
+</div>

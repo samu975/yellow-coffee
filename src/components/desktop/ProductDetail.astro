@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+import LayoutDesktop from '../../layouts/LayoutDesktop.astro';
+interface Props {
+  ProductDetailImg: any;
+  Banner: any;
+  Drip: boolean;
+  Mush: boolean;
+  title: string;
+}
+
+//imagenes
+import DripImg from '../../assets/desktop/Cómo usar un coffe drip@2x.png';
+import MushBannersSection from './MushBannersSection.astro';
+
+//Carousel
+import YellowDesktop from '../../assets/desktop/carousel/Café340.png';
+import BlueDesktop from '../../assets/desktop/carousel/Drip.png';
+import GrayDesktop from '../../assets/desktop/carousel/Mush.png';
+import PinkDesktop from '../../assets/desktop/carousel/Accesorios.png';
+import OrangeDesktop from '../../assets/desktop/carousel/2500.png';
+import Carousel from '../react/Carousel';
+import FooterDesktop from '../FooterDesktop.astro';
+
+const imageCarouselDesktop = [
+  YellowDesktop.src,
+  BlueDesktop.src,
+  GrayDesktop.src,
+  PinkDesktop.src,
+  OrangeDesktop.src,
+];
+
+const { ProductDetailImg, Banner, Drip, Mush, title } = Astro.props;
+---
+
+<LayoutDesktop title={title} textcolor="blakc" />
+<div class="pt-28 mx-10">
+  <Image src={ProductDetailImg} alt={title} />
+</div>
+{
+  Drip && (
+    <div class="pt-28 mx-10">
+      <Image src={DripImg} alt={title} />
+    </div>
+  )
+}
+{Mush && <MushBannersSection />}
+
+{
+  !Mush && (
+    <>
+      <section class="flex flex-col justify-center items-center mt-16">
+        <div class="-mb-20">
+          <h2 class="font-bold uppercase text-2xl text-center">
+            Con cada taza
+          </h2>
+          <h3 class="font-normal text-2xl text-center">
+            de Yellow Coffe, estás contribuyendo a un proceso <br />
+            ambiental y social
+          </h3>
+        </div>
+      </section>
+      <div class="-mt-20">
+        <Image src={Banner} alt={'Banner de yellowCoffe'} />
+      </div>
+    </>
+  )
+}
+<div class="my-6">
+  <Carousel images={imageCarouselDesktop} client:only />
+</div>
+<FooterDesktop />
